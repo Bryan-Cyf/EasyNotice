@@ -8,6 +8,11 @@
 		<Description>[通知服务]邮件发送封装</Description>
 		<PackageTags>email,notice</PackageTags>
 	</PropertyGroup>
+	
+	<ItemGroup>
+		<None Include="../../media/nuget-icon.png" Pack="true" Visible="false" PackagePath="" />
+	</ItemGroup>
+
 	<ItemGroup>
 		<PackageReference Include="EasyNotice.Core" Version="1.0.5" />
 		<PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="3.1.17" />

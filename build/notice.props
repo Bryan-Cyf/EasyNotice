@@ -1,6 +1,6 @@
 <Project>
 	<PropertyGroup>
-		<VersionPrefix>1.0.6</VersionPrefix>
+		<VersionPrefix>1.1.0</VersionPrefix>
 		<VersionSuffix>0</VersionSuffix>
 		<Version>$(VersionPrefix).$(VersionSuffix)</Version>
 		<AssemblyVersion>$(VersionPrefix).0</AssemblyVersion>
@@ -8,6 +8,7 @@
 		<Authors>Bryan</Authors>
 		<Company>Bryan</Company>
 		<Product>EasyNotice</Product>
+		<PackageProjectUrl>https://github.com/Bryan-Cyf/EasyNotice</PackageProjectUrl>
 		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
 	</PropertyGroup>
 </Project>

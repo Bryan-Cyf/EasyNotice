@@ -17,7 +17,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EasyNotice.Email", "src\Eas
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "build", "build", "{628C5E02-D7CA-4C77-9C77-C4A83EF4C1EE}"
 	ProjectSection(SolutionItems) = preProject
+		build\nupkg\create-push.ps1 = build\nupkg\create-push.ps1
 		build\notice.props = build\notice.props
+		build\nupkg\pack.ps1 = build\nupkg\pack.ps1
+		README.md = README.md
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EasyNotice.Demo.WebApi", "sample\EasyNotice.Demo.WebApi\EasyNotice.Demo.WebApi.csproj", "{41A11C75-2029-4CED-BBB4-31C7775163C4}"

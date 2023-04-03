@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\EasyNotice.Dingtalk\EasyNotice.Dingtalk.csproj" />
+    <ProjectReference Include="..\..\src\EasyNotice.Email\EasyNotice.Email.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Bryan.Tools.Swagger" Version="1.0.2" />
+  </ItemGroup>
+
+</Project>

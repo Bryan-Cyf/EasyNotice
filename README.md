@@ -4,9 +4,9 @@
 
 | Package Name |  Version | Downloads
 |--------------|  ------- | ----
-| EasyNotice.Core | ![](https://img.shields.io/badge/nuget-v1.1.1-blue) | ![](https://img.shields.io/badge/downloads-xM-brightgreen)|
-| EasyNotice.Dingtalk | ![](https://img.shields.io/badge/nuget-v1.1.1-blue) | ![](https://img.shields.io/badge/downloads-xM-brightgreen)|
-| EasyNotice.Email | ![](https://img.shields.io/badge/nuget-v1.1.1-blue) | ![](https://img.shields.io/badge/downloads-xM-brightgreen)|
+| EasyNotice.Core | [外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-0DE3xvrh-1680617051319)(null)] | [外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-5qaUV3qt-1680617055812)(null)]|
+| EasyNotice.Dingtalk | [外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-7lfaCceb-1680617051094)(null)] | [外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-JERJJX7L-1680617052073)(null)]|
+| EasyNotice.Email | [外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-OyRAu06I-1680617055416)(null)] | [外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-UGRt4FaC-1680617056212)(null)]|
 
 ---------
 
@@ -27,14 +27,14 @@
 
 ## 1. 发送邮件通知
 > 邮件通知支持同时发送给多个收件人
-### 1. Step 1 : 安装包，通过Nuget安装包
+### Step 1 : 安装包，通过Nuget安装包
 
 ```powershell
 Install-Package EasyNotice.Core
 Install-Package EasyNotice.Email
 ```
 
-### 2. Step 2 : 配置 Startup 启动类
+### Step 2 : 配置 Startup 启动类
 
 ```csharp
 public class Startup
@@ -64,7 +64,7 @@ public class Startup
 }
 ```
 
-### 3. Step 3 : IEmailProvider服务接口使用
+### Step 3 : IEmailProvider服务接口使用
 
 ```csharp
 [ApiController]
@@ -89,14 +89,14 @@ public class NoticeController : ControllerBase
 
 
 ## 2. 发钉钉通知
-### 1. Step 1 : 安装包，通过Nuget安装包
+### Step 1 : 安装包，通过Nuget安装包
 
 ```powershell
 Install-Package EasyNotice.Core
 Install-Package EasyNotice.Dingtalk
 ```
 
-### 2. Step 2 : 配置 Startup 启动类
+### Step 2 : 配置 Startup 启动类
 
 ```csharp
 public class Startup
@@ -119,7 +119,7 @@ public class Startup
 }
 ```
 
-### 3. Step 3 : IEmailProvider服务接口使用
+### Step 3 : IDingtalkProvider服务接口使用
 
 ```csharp
 [ApiController]

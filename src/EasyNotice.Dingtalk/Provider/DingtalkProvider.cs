@@ -28,6 +28,8 @@ namespace EasyNotice.Dingtalk
         }
 
         public async Task<EasyNoticeSendResponse> SendAsync(string title, Exception exception) => await SendMarkdownAsync(title, $"# {title}{Environment.NewLine}{exception.Message}{Environment.NewLine}{exception}");
+        public async Task<EasyNoticeSendResponse> SendAsync(string title, string message) => await SendMarkdownAsync(title, message);
+
 
         public Task<EasyNoticeSendResponse> SendTextAsync(string text) => SendTextAsync(new TextMessage(text));
 

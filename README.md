@@ -4,9 +4,9 @@
 
 | Package Name |  Version | Downloads
 |--------------|  ------- | ----
-| EasyNotice.Core | [外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-0DE3xvrh-1680617051319)(null)] | [外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-5qaUV3qt-1680617055812)(null)]|
-| EasyNotice.Dingtalk | [外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-7lfaCceb-1680617051094)(null)] | [外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-JERJJX7L-1680617052073)(null)]|
-| EasyNotice.Email | [外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-OyRAu06I-1680617055416)(null)] | [外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-UGRt4FaC-1680617056212)(null)]|
+| EasyNotice.Core | ![](https://img.shields.io/badge/nuget-v1.2.0-blue) | ![](https://img.shields.io/badge/downloads-xM-brightgreen)|
+| EasyNotice.Dingtalk | ![](https://img.shields.io/badge/nuget-v1.2.0-blue) | ![](https://img.shields.io/badge/downloads-xM-brightgreen)|
+| EasyNotice.Email | ![](https://img.shields.io/badge/nuget-v1.2.0-blue) | ![](https://img.shields.io/badge/downloads-xM-brightgreen)|
 
 ---------
 

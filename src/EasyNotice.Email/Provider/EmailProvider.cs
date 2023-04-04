@@ -39,6 +39,24 @@ namespace EasyNotice.Email
             return response;
         }
 
+        public async Task<EasyNoticeSendResponse> SendAsync(string title, string message)
+        {
+            var response = new EasyNoticeSendResponse();
+            try
+            {
+                response = await SendAsync(new EmailSendRequest
+                {
+                    Subject = title,
+                    Body = message
+                });
+            }
+            catch (Exception ex)
+            {
+                response.ErrMsg = $"发送邮件失败,{ex.Message}";
+            }
+            return response;
+        }
+
         public async Task<EasyNoticeSendResponse> SendAsync(EmailSendRequest input)
         {
             var response = new EasyNoticeSendResponse();
@@ -65,6 +83,7 @@ namespace EasyNotice.Email
             }
             return response;
         }
+
 
         private MimeMessage CreateMimeMessage(EmailSendRequest input)
         {

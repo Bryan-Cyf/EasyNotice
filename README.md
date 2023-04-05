@@ -4,10 +4,11 @@
 
 | Package Name |  Version | Downloads
 |--------------|  ------- | ----
-| EasyNotice.Core | ![](https://img.shields.io/badge/nuget-v1.3.0-blue) | ![](https://img.shields.io/badge/downloads-xM-brightgreen)|
-| EasyNotice.Dingtalk | ![](https://img.shields.io/badge/nuget-v1.3.0-blue) | ![](https://img.shields.io/badge/downloads-xM-brightgreen)|
-| EasyNotice.Email | ![](https://img.shields.io/badge/nuget-v1.3.0-blue) | ![](https://img.shields.io/badge/downloads-xM-brightgreen)|
-| EasyNotice.Feishu | ![](https://img.shields.io/badge/nuget-v1.3.0-blue) | ![](https://img.shields.io/badge/downloads-xM-brightgreen)|
+| EasyNotice.Core | ![](https://img.shields.io/badge/nuget-v1.4.0-blue) | ![](https://img.shields.io/badge/downloads-xM-brightgreen)|
+| EasyNotice.Dingtalk | ![](https://img.shields.io/badge/nuget-v1.4.0-blue) | ![](https://img.shields.io/badge/downloads-xM-brightgreen)|
+| EasyNotice.Email | ![](https://img.shields.io/badge/nuget-v1.4.0-blue) | ![](https://img.shields.io/badge/downloads-xM-brightgreen)|
+| EasyNotice.Feishu | ![](https://img.shields.io/badge/nuget-v1.4.0-blue) | ![](https://img.shields.io/badge/downloads-xM-brightgreen)|
+| EasyNotice.Weixin | ![](https://img.shields.io/badge/nuget-v1.4.0-blue) | ![](https://img.shields.io/badge/downloads-xM-brightgreen)|
 
 ---------
 
@@ -17,7 +18,7 @@
 -------
 
 ## 功能介绍
- - 支持[邮件]、[钉钉]、[飞书]方式发送
+ - 支持[邮件]、[钉钉]、[飞书]、[企业微信]方式发送
  - 支持自定义发送间隔，避免同样的异常频繁通知
  - 傻瓜式配置，开箱即用
 

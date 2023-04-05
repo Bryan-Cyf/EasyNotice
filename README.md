@@ -4,19 +4,19 @@
 
 | Package Name |  Version | Downloads
 |--------------|  ------- | ----
-| EasyNotice.Core | ![](https://img.shields.io/badge/nuget-v1.2.0-blue) | ![](https://img.shields.io/badge/downloads-xM-brightgreen)|
-| EasyNotice.Dingtalk | ![](https://img.shields.io/badge/nuget-v1.2.0-blue) | ![](https://img.shields.io/badge/downloads-xM-brightgreen)|
-| EasyNotice.Email | ![](https://img.shields.io/badge/nuget-v1.2.0-blue) | ![](https://img.shields.io/badge/downloads-xM-brightgreen)|
+| EasyNotice.Core | ![](https://img.shields.io/badge/nuget-v1.3.0-blue) | ![](https://img.shields.io/badge/downloads-xM-brightgreen)|
+| EasyNotice.Dingtalk | ![](https://img.shields.io/badge/nuget-v1.3.0-blue) | ![](https://img.shields.io/badge/downloads-xM-brightgreen)|
+| EasyNotice.Email | ![](https://img.shields.io/badge/nuget-v1.3.0-blue) | ![](https://img.shields.io/badge/downloads-xM-brightgreen)|
 
 ---------
 
 # `EasyNotice`
-> 这是一个基于.NET开源的消息通知组件，它包含了邮件通知、钉钉通知，可以帮助我们更容易地发送程序异常通知！
+> 这是一个基于.NET开源的消息通知组件，它包含了邮件通知、钉钉、飞书通知，可以帮助我们更容易地发送程序异常通知！
 
 -------
 
 ## 功能介绍
- - 支持邮件发送、钉钉发送
+ - 支持[邮件]、[钉钉]、[飞书]方式发送
  - 支持自定义发送间隔，避免同样的异常频繁通知
  - 傻瓜式配置，开箱即用
 
@@ -24,8 +24,9 @@
  ---------
 
 # 项目接入
+> 项目接入提供了邮件通知、钉钉通知、飞书通知使用方式
 
-## 1. 发送邮件通知
+## 1. 邮件通知
 > 邮件通知支持同时发送给多个收件人
 ### Step 1 : 安装包，通过Nuget安装包
 
@@ -85,10 +86,11 @@ public class NoticeController : ControllerBase
     }
 }
 ```
+
 ---------
 
 
-## 2. 发钉钉通知
+## 2. 钉钉通知
 ### Step 1 : 安装包，通过Nuget安装包
 
 ```powershell
@@ -111,7 +113,7 @@ public class Startup
             config.IntervalSeconds = 10;//同一标题的消息，10秒内只能发一条，避免短时间内大量发送重复消息
             config.UseDingTalk(option =>
             {
-                option.WebHook = "https://oapi.dingtalk.com/robot/send?access_token=xxx";
+                option.WebHook = "https://oapi.dingtalk.com/robot/send?access_token=xxxxx";
                 option.Secret = "secret";
             });
         });
@@ -140,6 +142,59 @@ public class NoticeController : ControllerBase
 }
 ```
 
+---------
+
+## 3. 飞书通知
+### Step 1 : 安装包，通过Nuget安装包
+
+```powershell
+Install-Package EasyNotice.Core
+Install-Package EasyNotice.Feishu
+```
+
+### Step 2 : 配置 Startup 启动类
+
+```csharp
+public class Startup
+{
+    //...
+    
+    public void ConfigureServices(IServiceCollection services)
+    {
+        //configuration
+        services.AddEsayNotice(config =>
+        {
+            config.IntervalSeconds = 10;//同一标题的消息，10秒内只能发一条，避免短时间内大量发送重复消息
+            config.UseFeishu(option =>
+            {
+                option.WebHook = "https://open.feishu.cn/open-apis/bot/v2/hook/xxxxx";//通知回调的钩子
+                option.Secret = "secret";//签名校验
+            });
+        });
+    }    
+}
+```
+
+### Step 3 : IFeishuProvider服务接口使用
+
+```csharp
+[ApiController]
+[Route("[controller]/[action]")]
+public class NoticeController : ControllerBase
+{
+    private readonly IFeishuProvider _feishuProvider;
+    public NoticeController(IFeishuProvider feishuProvider)
+    {
+        _feishuProvider = feishuProvider;
+    }
+
+    [HttpGet]
+    public async Task SendFeishu([FromQuery] string str)
+    {
+        await _feishuProvider.SendAsync(str, new Exception(str));
+    }
+}
+```
 ---------
 ## 更多示例
 

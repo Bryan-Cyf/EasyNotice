@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 namespace EasyNotice.Feishu
 {
     /// <summary>
+    /// 配置飞书群机器人官方文档
     /// https://open.feishu.cn/document/ukTMukTMukTM/ucTM5YjL3ETO24yNxkjN?lang=zh-CN
     /// </summary>
     internal class FeishuProvider : IFeishuProvider

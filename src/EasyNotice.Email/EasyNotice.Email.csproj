@@ -5,7 +5,7 @@
 	<PropertyGroup>
 		<TargetFramework>netstandard2.1</TargetFramework>
 		<RootNamespace>EasyNotice.Email</RootNamespace>
-		<Description>[消息通知]邮件,Email通知组件</Description>
+		<Description>[消息通知]邮件通知组件</Description>
 		<PackageTags>email,notice</PackageTags>
 	</PropertyGroup>
 	

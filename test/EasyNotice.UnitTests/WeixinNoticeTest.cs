@@ -8,34 +8,33 @@ using Xunit;
 namespace EasyNotice.UnitTests
 {
     /// <summary>
-    /// 配置飞书群机器人官方文档
-    /// https://open.feishu.cn/document/ukTMukTMukTM/ucTM5YjL3ETO24yNxkjN?lang=zh-CN
+    /// 配置企业微信群机器人官方文档
+    /// https://developer.work.weixin.qq.com/document/path/91770
     /// </summary>
-    public class FeishuNoticeTest
+    public class WeixinNoticeTest
     {
-        private readonly IFeishuProvider _feishuProvider;
+        private readonly IWeixinProvider _weixinProvider;
 
-        public FeishuNoticeTest()
+        public WeixinNoticeTest()
         {
             IServiceCollection services = new ServiceCollection();
             services.AddEsayNotice(config =>
             {
                 config.IntervalSeconds = 10;//同一标题的消息，10秒内只能发一条，避免短时间内大量发送重复消息
-                config.UseFeishu(option =>
+                config.UseWeixin(option =>
                 {
-                    option.WebHook = "https://open.feishu.cn/open-apis/bot/v2/hook/xxxxx";//通知地址
-                    option.Secret = "secret";//签名校验
+                    option.WebHook = "https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=a2b61200-40af-4ae0-be88-a40136d203ab";//通知地址
                 });
             });
             IServiceProvider serviceProvider = services.BuildServiceProvider();
 
-            _feishuProvider = serviceProvider.GetService<IFeishuProvider>();
+            _weixinProvider = serviceProvider.GetService<IWeixinProvider>();
         }
 
         [Fact]
-        public async Task Feishu_Send_Should_Be_Succeed()
+        public async Task Weixin_Send_Should_Be_Succeed()
         {
-            var response = await _feishuProvider.SendAsync("通知标题", new Exception("custom exception"));
+            var response = await _weixinProvider.SendAsync("通知标题", new Exception("custom exception"));
             Assert.True(response.IsSuccess);
         }
     }

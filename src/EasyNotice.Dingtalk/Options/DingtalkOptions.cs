@@ -1,4 +1,4 @@
-﻿namespace EasyNotice.Dingtalk
+﻿namespace EasyNotice
 {
     public class DingtalkOptions
     {

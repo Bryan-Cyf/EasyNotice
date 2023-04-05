@@ -1,21 +1,22 @@
 ﻿using EasyNotice;
-using EasyNotice.Email;
+using EasyNotice.Weixin;
 using System;
 
 namespace Microsoft.Extensions.DependencyInjection
 {
-    public static class EmailExtension
+    public static class WeixinExtension
     {
-        public static EasyNoticeOptions UseEmail(
+        public static EasyNoticeOptions UseWeixin(
             this EasyNoticeOptions options,
-            Action<EmailOptions> configure)
+            Action<WeixinOptions> configure
+            )
         {
             if (configure == null)
             {
                 throw new ArgumentNullException(nameof(configure));
             }
 
-            options.RegisterExtension(new EmailOptionsExtension(configure));
+            options.RegisterExtension(new WeixinOptionsExtension(configure));
             return options;
         }
     }

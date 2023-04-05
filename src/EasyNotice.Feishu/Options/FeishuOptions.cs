@@ -1,4 +1,4 @@
-﻿namespace EasyNotice.Feishu
+﻿namespace EasyNotice
 {
     public class FeishuOptions
     {

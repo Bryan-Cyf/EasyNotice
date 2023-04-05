@@ -1,4 +1,5 @@
-﻿using EasyNotice.Feishu;
+﻿using EasyNotice;
+using EasyNotice.Feishu;
 using System;
 
 namespace Microsoft.Extensions.DependencyInjection

@@ -6,25 +6,25 @@ using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EasyNotice.Feishu
+namespace EasyNotice.Weixin
 {
     /// <summary>
-    /// 配置飞书群机器人官方文档
-    /// https://open.feishu.cn/document/ukTMukTMukTM/ucTM5YjL3ETO24yNxkjN?lang=zh-CN
+    /// 配置企业微信群机器人官方文档
+    /// https://developer.work.weixin.qq.com/document/path/91770
     /// </summary>
-    internal class FeishuProvider : IFeishuProvider
+    internal class WeixinProvider : IWeixinProvider
     {
         private static HttpClient _httpClient = new HttpClient(new HttpClientHandler
         {
             AutomaticDecompression = System.Net.DecompressionMethods.GZip,
         });
 
-        private readonly FeishuOptions _feishuOptions;
+        private readonly WeixinOptions _WeixinOptions;
         private readonly NoticeOptions _noticeOptions;
 
-        public FeishuProvider(IOptionsMonitor<FeishuOptions> FeishuOptions, IOptionsMonitor<NoticeOptions> noticeOptions)
+        public WeixinProvider(IOptionsMonitor<WeixinOptions> WeixinOptions, IOptionsMonitor<NoticeOptions> noticeOptions)
         {
-            _feishuOptions = FeishuOptions.CurrentValue;
+            _WeixinOptions = WeixinOptions.CurrentValue;
             _noticeOptions = noticeOptions.CurrentValue;
         }
 
@@ -55,9 +55,7 @@ namespace EasyNotice.Feishu
             {
                 return await IntervalHelper.IntervalExcuteAsync(async () =>
                 {
-                    message.timestamp = DateTimeHelper.GetTimestanp().ToString();
-                    message.sign = FeishuHelper.GetSign(message.timestamp, _feishuOptions.Secret);
-                    var response = await _httpClient.PostAsync(_feishuOptions.WebHook, new StringContent(message.ToString(), Encoding.UTF8, "application/json"));
+                    var response = await _httpClient.PostAsync(_WeixinOptions.WebHook, new StringContent(message.ToString(), Encoding.UTF8, "application/json"));
                     var html = await response.Content.ReadAsStringAsync();
                     return JsonConvert.DeserializeObject<EasyNoticeSendResponse>(html);
                 }, title, _noticeOptions.IntervalSeconds);

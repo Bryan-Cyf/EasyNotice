@@ -1,4 +1,5 @@
-﻿using EasyNotice.Dingtalk;
+﻿using EasyNotice;
+using EasyNotice.Dingtalk;
 using System;
 
 namespace Microsoft.Extensions.DependencyInjection

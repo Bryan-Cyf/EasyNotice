@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace EasyNotice.Email
+namespace EasyNotice
 {
     public class EmailOptions
     {

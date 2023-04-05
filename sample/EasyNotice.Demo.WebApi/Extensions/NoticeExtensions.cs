@@ -1,7 +1,5 @@
-﻿using EasyNotice.Core;
-using EasyNotice.Dingtalk;
-using EasyNotice.Email;
-using EasyNotice.Feishu;
+﻿using EasyNotice;
+using EasyNotice.Core;
 
 namespace Microsoft.Extensions.DependencyInjection
 {
@@ -50,6 +48,15 @@ namespace Microsoft.Extensions.DependencyInjection
                     {
                         x.Secret = feishuOptions.Secret;
                         x.WebHook = feishuOptions.WebHook;
+                    });
+                }
+
+                var weixinOptions = baseConfiguration.GetSection(WeixinOptions.SectionName).Get<WeixinOptions>();
+                if (weixinOptions != null)
+                {
+                    config.UseWeixin(x =>
+                    {
+                        x.WebHook = weixinOptions.WebHook;
                     });
                 }
             });

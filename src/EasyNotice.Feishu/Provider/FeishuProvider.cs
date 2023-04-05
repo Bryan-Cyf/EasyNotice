@@ -32,7 +32,7 @@ namespace EasyNotice.Feishu
         /// </summary>
         public Task<EasyNoticeSendResponse> SendAsync(string title, Exception exception)
         {
-            var text = $"# {title}{Environment.NewLine}{exception.Message}{Environment.NewLine}{exception}";
+            var text = $"{title}{Environment.NewLine}{exception.Message}{Environment.NewLine}{exception}";
             return SendBaseAsync(new TextMessage(text));
         }
 

@@ -21,50 +21,45 @@ namespace EasyNotice.Email
             _noticeOptions = noticeOptions.CurrentValue;
         }
 
-        public async Task<EasyNoticeSendResponse> SendAsync(string title, Exception exception)
+        /// <summary>
+        /// 发送异常消息
+        /// </summary>
+        public Task<EasyNoticeSendResponse> SendAsync(string title, Exception exception)
         {
-            var response = new EasyNoticeSendResponse();
-            try
+            var request = new EmailSendRequest
             {
-                response = await SendAsync(new EmailSendRequest
-                {
-                    Subject = title,
-                    Body = $"{exception.Message}{Environment.NewLine}{exception}"
-                });
-            }
-            catch (Exception ex)
-            {
-                response.ErrMsg = $"发送邮件失败,{ex.Message}";
-            }
-            return response;
+                Subject = title,
+                Body = $"{exception.Message}{Environment.NewLine}{exception}"
+            };
+
+            return SendBaseAsync(request);
         }
 
-        public async Task<EasyNoticeSendResponse> SendAsync(string title, string message)
+        /// <summary>
+        /// 发送普通消息
+        /// </summary>
+        public Task<EasyNoticeSendResponse> SendAsync(string title, string message)
         {
-            var response = new EasyNoticeSendResponse();
-            try
+            var request = new EmailSendRequest
             {
-                response = await SendAsync(new EmailSendRequest
-                {
-                    Subject = title,
-                    Body = message
-                });
-            }
-            catch (Exception ex)
-            {
-                response.ErrMsg = $"发送邮件失败,{ex.Message}";
-            }
-            return response;
+                Subject = title,
+                Body = message
+            };
+
+            return  SendBaseAsync(request);
         }
 
-        public async Task<EasyNoticeSendResponse> SendAsync(EmailSendRequest input)
+        /// <summary>
+        /// 发送消息公共方法
+        /// </summary>
+        private async Task<EasyNoticeSendResponse> SendBaseAsync(EmailSendRequest input)
         {
             var response = new EasyNoticeSendResponse();
             try
             {
                 await IntervalHelper.IntervalExcuteAsync(async () =>
                 {
-                    var message = CreateMimeMessage(input);
+                    var message = EmailHelper.CreateMimeMessage(input, _emailOptions);
                     using (SmtpClient client = new SmtpClient())
                     {
                         client.CheckCertificateRevocation = false;
@@ -83,41 +78,5 @@ namespace EasyNotice.Email
             }
             return response;
         }
-
-
-        private MimeMessage CreateMimeMessage(EmailSendRequest input)
-        {
-            MimeMessage mimeMessage = new MimeMessage();
-            var fromMailAddress = new MailboxAddress(_emailOptions.FromName ?? _emailOptions.FromAddress, _emailOptions.FromAddress);
-            mimeMessage.From.Add(fromMailAddress);
-            for (int i = 0; i < _emailOptions.ToAddress.Count; i++)
-            {
-                var item = _emailOptions.ToAddress[i];
-                var toMailAddress = MailboxAddress.Parse(item);
-                mimeMessage.To.Add(toMailAddress);
-            }
-            BodyBuilder bodyBuilder = new BodyBuilder()
-            {
-                HtmlBody = input.Body,
-            };
-            if (input.Attachments != null)
-            {
-                var attachment = bodyBuilder.Attachments.Add(input.FileName, input.Attachments);
-                //解决中文文件名乱码
-                var charset = "GB18030";
-                attachment.ContentType.Parameters.Clear();
-                attachment.ContentDisposition.Parameters.Clear();
-                attachment.ContentType.Parameters.Add(charset, "name", input.FileName);
-                //解决文件名不能超过41字符
-                foreach (var param in attachment.ContentType.Parameters)
-                {
-                    param.EncodingMethod = ParameterEncodingMethod.Rfc2047;
-                }
-            }
-            mimeMessage.Body = bodyBuilder.ToMessageBody();
-            mimeMessage.Subject = input.Subject;
-            return mimeMessage;
-        }
-
     }
 }

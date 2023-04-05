@@ -7,8 +7,6 @@ namespace EasyNotice
 {
     public interface IDingtalkProvider : IEasyNotice
     {
-        Task<EasyNoticeSendResponse> SendAsync(string title, Exception ex);
-
         Task<EasyNoticeSendResponse> SendTextAsync(string text);
 
         Task<EasyNoticeSendResponse> SendTextAsync(TextMessage message);

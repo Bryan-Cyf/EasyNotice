@@ -9,6 +9,5 @@ namespace EasyNotice
 {
     public interface IEmailProvider : IEasyNotice
     {
-        Task<EasyNoticeSendResponse> SendAsync(EmailSendRequest input);
     }
 }

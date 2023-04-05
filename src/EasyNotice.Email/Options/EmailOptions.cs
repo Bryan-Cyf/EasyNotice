@@ -9,28 +9,33 @@ namespace EasyNotice.Email
     {
         public const string SectionName = "Mail";
 
+        /// <summary>
+        /// SMTP地址
+        /// </summary>
         public string Host { get; set; }
 
+        /// <summary>
+        /// SMTP端口
+        /// </summary>
         public int Port { get; set; }
 
         /// <summary>
-        /// 发送人名称
-        /// 自定义即可
+        /// 发件人
         /// </summary>
         public string FromName { get; set; }
 
         /// <summary>
-        /// 账户
+        /// 发件地址
         /// </summary>
         public string FromAddress { get; set; }
 
         /// <summary>
-        /// 密码
+        /// 发件密码
         /// </summary>
         public string Password { get; set; }
 
         /// <summary>
-        /// 收件邮箱
+        /// 收件箱
         /// </summary>
         public List<string> ToAddress { get; set; }
     }

@@ -240,7 +240,7 @@ public class Startup
 }
 ```
 
-### Step 3 : IFeishuProvider服务接口使用
+### Step 3 : IWeixinProvider服务接口使用
 
 ```csharp
 [ApiController]

@@ -112,8 +112,8 @@ public class Startup
             config.IntervalSeconds = 10;//同一标题的消息，10秒内只能发一条，避免短时间内大量发送重复消息
             config.UseDingTalk(option =>
             {
-                option.WebHook = "https://oapi.dingtalk.com/robot/send?access_token=xxxxx";
-                option.Secret = "secret";
+                option.WebHook = "https://oapi.dingtalk.com/robot/send?access_token=xxxxx";//通知地址
+                option.Secret = "secret";//签名校验
             });
         });
     }    
@@ -144,6 +144,8 @@ public class NoticeController : ControllerBase
 ---------
 
 ## 3. 飞书通知
+> [配置飞书群机器人官方文档](https://open.feishu.cn/document/ukTMukTMukTM/ucTM5YjL3ETO24yNxkjN?lang=zh-CN)
+
 ### Step 1 : 安装包，通过Nuget安装包
 
 ```powershell
@@ -166,7 +168,7 @@ public class Startup
             config.IntervalSeconds = 10;//同一标题的消息，10秒内只能发一条，避免短时间内大量发送重复消息
             config.UseFeishu(option =>
             {
-                option.WebHook = "https://open.feishu.cn/open-apis/bot/v2/hook/xxxxx";//通知回调的钩子
+                option.WebHook = "https://open.feishu.cn/open-apis/bot/v2/hook/xxxxx";//通知地址
                 option.Secret = "secret";//签名校验
             });
         });

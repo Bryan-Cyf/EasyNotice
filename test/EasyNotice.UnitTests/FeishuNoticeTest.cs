@@ -23,7 +23,7 @@ namespace EasyNotice.UnitTests
                 config.IntervalSeconds = 10;//同一标题的消息，10秒内只能发一条，避免短时间内大量发送重复消息
                 config.UseFeishu(option =>
                 {
-                    option.WebHook = "https://open.feishu.cn/open-apis/bot/v2/hook/xxxxx";//通知回调的钩子
+                    option.WebHook = "https://open.feishu.cn/open-apis/bot/v2/hook/xxxxx";//通知地址
                     option.Secret = "secret";//签名校验
                 });
             });

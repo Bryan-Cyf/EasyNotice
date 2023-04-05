@@ -50,8 +50,8 @@ public class Startup
             config.IntervalSeconds = 10;//同一标题的消息，10秒内只能发一条，避免短时间内大量发送重复消息
             config.UseEmail(option =>
             {
-                option.Host = "smtp.qq.com";//smtp域名
-                option.Port = 465;//端口
+                option.Host = "smtp.qq.com";//SMTP地址
+                option.Port = 465;//SMTP端口
                 option.FromName = "System";//发送人名字（自定义）
                 option.FromAddress = "12345@qq.com";//发送邮箱
                 option.Password = "passaword";//秘钥
@@ -81,7 +81,6 @@ public class NoticeController : ControllerBase
     [HttpGet]
     public async Task SendMail([FromQuery] string str)
     {
-        //发送邮件
         await _mailProvider.SendAsync(str, new Exception(str));
     }
 }

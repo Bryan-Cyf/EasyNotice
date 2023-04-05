@@ -7,6 +7,7 @@
 | EasyNotice.Core | ![](https://img.shields.io/badge/nuget-v1.3.0-blue) | ![](https://img.shields.io/badge/downloads-xM-brightgreen)|
 | EasyNotice.Dingtalk | ![](https://img.shields.io/badge/nuget-v1.3.0-blue) | ![](https://img.shields.io/badge/downloads-xM-brightgreen)|
 | EasyNotice.Email | ![](https://img.shields.io/badge/nuget-v1.3.0-blue) | ![](https://img.shields.io/badge/downloads-xM-brightgreen)|
+| EasyNotice.Feishu | ![](https://img.shields.io/badge/nuget-v1.3.0-blue) | ![](https://img.shields.io/badge/downloads-xM-brightgreen)|
 
 ---------
 

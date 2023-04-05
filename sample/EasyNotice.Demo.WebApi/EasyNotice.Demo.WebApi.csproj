@@ -9,6 +9,7 @@
   <ItemGroup>
     <ProjectReference Include="..\..\src\EasyNotice.Dingtalk\EasyNotice.Dingtalk.csproj" />
     <ProjectReference Include="..\..\src\EasyNotice.Email\EasyNotice.Email.csproj" />
+    <ProjectReference Include="..\..\src\EasyNotice.Feishu\EasyNotice.Feishu.csproj" />
   </ItemGroup>
 
   <ItemGroup>

@@ -1,6 +1,7 @@
 ﻿using EasyNotice.Core;
 using EasyNotice.Dingtalk;
 using EasyNotice.Email;
+using EasyNotice.Feishu;
 
 namespace Microsoft.Extensions.DependencyInjection
 {
@@ -39,6 +40,16 @@ namespace Microsoft.Extensions.DependencyInjection
                     {
                         x.Secret = dingtalkOptions.Secret;
                         x.WebHook = dingtalkOptions.WebHook;
+                    });
+                }
+
+                var feishuOptions = baseConfiguration.GetSection(FeishuOptions.SectionName).Get<DingtalkOptions>();
+                if (feishuOptions != null)
+                {
+                    config.UseFeishu(x =>
+                    {
+                        x.Secret = feishuOptions.Secret;
+                        x.WebHook = feishuOptions.WebHook;
                     });
                 }
             });

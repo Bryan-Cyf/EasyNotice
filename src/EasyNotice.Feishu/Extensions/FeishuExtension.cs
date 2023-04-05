@@ -1,13 +1,13 @@
-﻿using EasyNotice.Dingtalk;
+﻿using EasyNotice.Feishu;
 using System;
 
 namespace Microsoft.Extensions.DependencyInjection
 {
-    public static class DingtalklExtension
+    public static class FeishuExtension
     {
-        public static EasyNoticeOptions UseDingTalk(
+        public static EasyNoticeOptions UseFeishu(
             this EasyNoticeOptions options,
-            Action<DingtalkOptions> configure
+            Action<FeishuOptions> configure
             )
         {
             if (configure == null)
@@ -15,7 +15,7 @@ namespace Microsoft.Extensions.DependencyInjection
                 throw new ArgumentNullException(nameof(configure));
             }
 
-            options.RegisterExtension(new DingtalkOptionsExtension(configure));
+            options.RegisterExtension(new FeishuOptionsExtension(configure));
             return options;
         }
     }

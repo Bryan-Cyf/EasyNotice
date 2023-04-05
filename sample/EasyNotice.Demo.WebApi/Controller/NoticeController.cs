@@ -8,11 +8,15 @@ namespace EasyNotice.Demo.WebApi.Controller
     {
         private readonly IEmailProvider _mailProvider;
         private readonly IDingtalkProvider _dingtalkProvider;
-        public NoticeController(IEmailProvider provider
-            , IDingtalkProvider dingtalkProvider)
+        private readonly IFeishuProvider _feishuProvider;
+
+        public NoticeController(IEmailProvider provider,
+            IDingtalkProvider dingtalkProvider,
+            IFeishuProvider feishuProvider)
         {
             _mailProvider = provider;
             _dingtalkProvider = dingtalkProvider;
+            _feishuProvider = feishuProvider;
         }
 
         [HttpGet]
@@ -25,6 +29,12 @@ namespace EasyNotice.Demo.WebApi.Controller
         public async Task SendDingTalk([FromQuery] string str)
         {
             await _dingtalkProvider.SendAsync(str, new Exception(str));
+        }
+
+        [HttpGet]
+        public async Task SendFeishu([FromQuery] string str)
+        {
+            await _feishuProvider.SendAsync(str, new Exception(str));
         }
     }
 }

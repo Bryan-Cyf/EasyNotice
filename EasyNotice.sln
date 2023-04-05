@@ -25,6 +25,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EasyNotice.Demo.WebApi", "s
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EasyNotice.UnitTests", "test\EasyNotice.UnitTests\EasyNotice.UnitTests.csproj", "{BA1ECE81-29CF-4F65-98EF-B9C9640BCDCD}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EasyNotice.Feishu", "src\EasyNotice.Feishu\EasyNotice.Feishu.csproj", "{AE7EF462-71FD-4F70-8D0D-F8F6B707D29D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{BA1ECE81-29CF-4F65-98EF-B9C9640BCDCD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BA1ECE81-29CF-4F65-98EF-B9C9640BCDCD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BA1ECE81-29CF-4F65-98EF-B9C9640BCDCD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AE7EF462-71FD-4F70-8D0D-F8F6B707D29D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE7EF462-71FD-4F70-8D0D-F8F6B707D29D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE7EF462-71FD-4F70-8D0D-F8F6B707D29D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE7EF462-71FD-4F70-8D0D-F8F6B707D29D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -61,6 +67,7 @@ Global
 		{D8193A65-3A20-48FA-BCE8-D56796759C7C} = {4E7D9BC3-36A6-4220-8FCF-1645E82F6017}
 		{41A11C75-2029-4CED-BBB4-31C7775163C4} = {5956EB07-2B9B-4E8A-95B8-A09D4244A73A}
 		{BA1ECE81-29CF-4F65-98EF-B9C9640BCDCD} = {6E5A3A5F-FC37-4352-8AC2-6980A2EE104C}
+		{AE7EF462-71FD-4F70-8D0D-F8F6B707D29D} = {4E7D9BC3-36A6-4220-8FCF-1645E82F6017}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {DD0C1D6A-71C5-443E-93FC-2234BC5E5CAF}

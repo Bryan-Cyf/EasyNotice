@@ -90,6 +90,8 @@ public class NoticeController : ControllerBase
 
 
 ## 2. 钉钉通知
+> [配置钉钉群机器人官方文档](https://developers.dingtalk.com/document/app/custom-robot-access)
+
 ### Step 1 : 安装包，通过Nuget安装包
 
 ```powershell

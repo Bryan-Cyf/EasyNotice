@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 namespace EasyNotice.Dingtalk
 {
     /// <summary>
+    /// 配置钉钉群机器人官方文档
     /// https://developers.dingtalk.com/document/app/custom-robot-access
     /// </summary>
     internal class DingtalkProvider : IDingtalkProvider

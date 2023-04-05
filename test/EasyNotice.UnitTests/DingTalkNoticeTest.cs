@@ -7,6 +7,10 @@ using Xunit;
 
 namespace EasyNotice.UnitTests
 {
+    /// <summary>
+    /// 配置钉钉群机器人官方文档
+    /// https://developers.dingtalk.com/document/app/custom-robot-access
+    /// </summary>
     public class DingTalkNoticeTest
     {
         private readonly IDingtalkProvider _dingtalkProvider;
@@ -19,8 +23,8 @@ namespace EasyNotice.UnitTests
                 config.IntervalSeconds = 10;//同一标题的消息，10秒内只能发一条，避免短时间内大量发送重复消息
                 config.UseDingTalk(option =>
                 {
-                    option.WebHook = "https://oapi.dingtalk.com/robot/send?access_token=xxx";
-                    option.Secret = "secret";
+                    option.WebHook = "https://oapi.dingtalk.com/robot/send?access_token=xxx";//通知地址
+                    option.Secret = "secret";//签名校验
                 });
             });
             IServiceProvider serviceProvider = services.BuildServiceProvider();

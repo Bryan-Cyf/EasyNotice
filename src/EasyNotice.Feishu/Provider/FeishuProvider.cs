@@ -64,7 +64,7 @@ namespace EasyNotice.Feishu
             }
             catch (Exception ex)
             {
-                response.ErrMsg = $"钉钉发送异常:{ex.Message}";
+                response.ErrMsg = $"飞书发送异常:{ex.Message}";
             }
             return response;
         }

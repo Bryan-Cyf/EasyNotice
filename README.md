@@ -4,11 +4,11 @@
 
 | Package Name |  Version | Downloads
 |--------------|  ------- | ----
-| EasyNotice.Core | ![](https://img.shields.io/badge/nuget-v1.4.0-blue) | ![](https://img.shields.io/badge/downloads-xM-brightgreen)|
-| EasyNotice.Dingtalk | ![](https://img.shields.io/badge/nuget-v1.4.0-blue) | ![](https://img.shields.io/badge/downloads-xM-brightgreen)|
-| EasyNotice.Email | ![](https://img.shields.io/badge/nuget-v1.4.0-blue) | ![](https://img.shields.io/badge/downloads-xM-brightgreen)|
-| EasyNotice.Feishu | ![](https://img.shields.io/badge/nuget-v1.4.0-blue) | ![](https://img.shields.io/badge/downloads-xM-brightgreen)|
-| EasyNotice.Weixin | ![](https://img.shields.io/badge/nuget-v1.4.0-blue) | ![](https://img.shields.io/badge/downloads-xM-brightgreen)|
+| EasyNotice.Core | ![](https://img.shields.io/badge/nuget-v1.5.0-blue) | ![](https://img.shields.io/badge/downloads-xM-brightgreen)|
+| EasyNotice.Dingtalk | ![](https://img.shields.io/badge/nuget-v1.5.0-blue) | ![](https://img.shields.io/badge/downloads-xM-brightgreen)|
+| EasyNotice.Email | ![](https://img.shields.io/badge/nuget-v1.5.0-blue) | ![](https://img.shields.io/badge/downloads-xM-brightgreen)|
+| EasyNotice.Feishu | ![](https://img.shields.io/badge/nuget-v1.5.0-blue) | ![](https://img.shields.io/badge/downloads-xM-brightgreen)|
+| EasyNotice.Weixin | ![](https://img.shields.io/badge/nuget-v1.5.0-blue) | ![](https://img.shields.io/badge/downloads-xM-brightgreen)|
 
 ---------
 

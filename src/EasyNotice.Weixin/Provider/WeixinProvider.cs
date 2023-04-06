@@ -62,7 +62,7 @@ namespace EasyNotice.Weixin
             }
             catch (Exception ex)
             {
-                response.ErrMsg = $"钉钉发送异常:{ex.Message}";
+                response.ErrMsg = $"企业微信发送异常:{ex.Message}";
             }
             return response;
         }

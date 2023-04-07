@@ -22,10 +22,10 @@ namespace EasyNotice.Dingtalk
         private readonly DingtalkOptions _dingTalkOptions;
         private readonly NoticeOptions _noticeOptions;
 
-        public DingtalkProvider(IOptionsMonitor<DingtalkOptions> dingTalkOptions, IOptionsMonitor<NoticeOptions> noticeOptions)
+        public DingtalkProvider(IOptionsSnapshot<DingtalkOptions> dingTalkOptions, IOptionsSnapshot<NoticeOptions> noticeOptions)
         {
-            _dingTalkOptions = dingTalkOptions.CurrentValue;
-            _noticeOptions = noticeOptions.CurrentValue;
+            _dingTalkOptions = dingTalkOptions.Value;
+            _noticeOptions = noticeOptions.Value;
         }
 
         /// <summary>

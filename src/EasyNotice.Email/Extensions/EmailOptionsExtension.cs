@@ -16,7 +16,7 @@ namespace EasyNotice.Email
         {
             services.AddOptions();
             services.AddOptions<EmailOptions>().Configure(configure);
-            services.AddSingleton<IEmailProvider, EmailProvider>();
+            services.AddTransient<IEmailProvider, EmailProvider>();
         }
     }
 }

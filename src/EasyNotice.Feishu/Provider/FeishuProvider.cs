@@ -22,10 +22,10 @@ namespace EasyNotice.Feishu
         private readonly FeishuOptions _feishuOptions;
         private readonly NoticeOptions _noticeOptions;
 
-        public FeishuProvider(IOptionsMonitor<FeishuOptions> FeishuOptions, IOptionsMonitor<NoticeOptions> noticeOptions)
+        public FeishuProvider(IOptionsSnapshot<FeishuOptions> FeishuOptions, IOptionsSnapshot<NoticeOptions> noticeOptions)
         {
-            _feishuOptions = FeishuOptions.CurrentValue;
-            _noticeOptions = noticeOptions.CurrentValue;
+            _feishuOptions = FeishuOptions.Value;
+            _noticeOptions = noticeOptions.Value;
         }
 
         /// <summary>

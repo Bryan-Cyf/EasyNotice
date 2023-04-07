@@ -16,7 +16,7 @@ namespace EasyNotice.Feishu
         {
             services.AddOptions();
             services.AddOptions<FeishuOptions>().Configure(configure);
-            services.AddSingleton<IFeishuProvider, FeishuProvider>();
+            services.AddTransient<IFeishuProvider, FeishuProvider>();
         }
     }
 }

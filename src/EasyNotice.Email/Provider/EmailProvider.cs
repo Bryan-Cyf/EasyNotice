@@ -15,10 +15,10 @@ namespace EasyNotice.Email
         private readonly EmailOptions _emailOptions;
         private readonly NoticeOptions _noticeOptions;
 
-        public EmailProvider(IOptionsMonitor<EmailOptions> emailOptions, IOptionsMonitor<NoticeOptions> noticeOptions)
+        public EmailProvider(IOptionsSnapshot<EmailOptions> emailOptions, IOptionsSnapshot<NoticeOptions> noticeOptions)
         {
-            _emailOptions = emailOptions.CurrentValue;
-            _noticeOptions = noticeOptions.CurrentValue;
+            _emailOptions = emailOptions.Value;
+            _noticeOptions = noticeOptions.Value;
         }
 
         /// <summary>

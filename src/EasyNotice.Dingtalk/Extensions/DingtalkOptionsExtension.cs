@@ -16,7 +16,7 @@ namespace EasyNotice.Dingtalk
         {
             services.AddOptions();
             services.AddOptions<DingtalkOptions>().Configure(configure);
-            services.AddSingleton<IDingtalkProvider, DingtalkProvider>();
+            services.AddTransient<IDingtalkProvider, DingtalkProvider>();
         }
     }
 }

@@ -16,7 +16,7 @@ namespace EasyNotice.Weixin
         {
             services.AddOptions();
             services.AddOptions<WeixinOptions>().Configure(configure);
-            services.AddSingleton<IWeixinProvider, WeixinProvider>();
+            services.AddTransient<IWeixinProvider, WeixinProvider>();
         }
     }
 }

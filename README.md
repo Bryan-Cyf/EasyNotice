@@ -29,7 +29,7 @@
 - [x] 企业微信群机器人
 
 ## 文档资料
-- [x][『EasyNotice』项目接入文档](https://chenyuefeng.blog.csdn.net/article/details/129963124)
+- [x] [『EasyNotice』项目接入文档](https://chenyuefeng.blog.csdn.net/article/details/129963124)
  ---------
 
 # 项目接入

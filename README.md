@@ -1,6 +1,6 @@
 # EasyNotice
 
-## Nuget°ü
+## NugetåŒ…
 
 | Package Name |  Version | Downloads
 |--------------|  ------- | ----
@@ -13,36 +13,38 @@
 ---------
 
 # `EasyNotice`
-> ÕâÊÇÒ»¸ö»ùÓÚ.NET¿ªÔ´µÄÏûÏ¢Í¨Öª×é¼ş£¬Ëü°üº¬ÁËÓÊ¼şÍ¨Öª¡¢¶¤¶¤¡¢·ÉÊé¡¢ÆóÒµÎ¢ĞÅÍ¨Öª£¬¿ÉÒÔ°ïÖúÎÒÃÇ¸üÈİÒ×µØ·¢ËÍ³ÌĞòÒì³£Í¨Öª£¡
+> è¿™æ˜¯ä¸€ä¸ªåŸºäº.NETå¼€æºçš„æ¶ˆæ¯é€šçŸ¥ç»„ä»¶ï¼Œå®ƒåŒ…å«äº†é‚®ä»¶é€šçŸ¥ã€é’‰é’‰ã€é£ä¹¦ã€ä¼ä¸šå¾®ä¿¡é€šçŸ¥ï¼Œå¯ä»¥å¸®åŠ©æˆ‘ä»¬æ›´å®¹æ˜“åœ°å‘é€ç¨‹åºå¼‚å¸¸é€šçŸ¥ï¼
 
 -------
 
-## ¹¦ÄÜ½éÉÜ
- - Ö§³Ö[ÓÊ¼ş]¡¢[¶¤¶¤]¡¢[·ÉÊé]¡¢[ÆóÒµÎ¢ĞÅ]·½Ê½·¢ËÍ
- - Ö§³Ö×Ô¶¨Òå·¢ËÍ¼ä¸ô£¬±ÜÃâÍ¬ÑùµÄÒì³£Æµ·±Í¨Öª
- - Éµ¹ÏÊ½ÅäÖÃ£¬¿ªÏä¼´ÓÃ
+## åŠŸèƒ½ä»‹ç»
+ - æ”¯æŒ[é‚®ä»¶]ã€[é’‰é’‰]ã€[é£ä¹¦]ã€[ä¼ä¸šå¾®ä¿¡]æ–¹å¼å‘é€
+ - æ”¯æŒè‡ªå®šä¹‰å‘é€é—´éš”ï¼Œé¿å…åŒæ ·çš„å¼‚å¸¸é¢‘ç¹é€šçŸ¥
+ - å‚»ç“œå¼é…ç½®ï¼Œå¼€ç®±å³ç”¨
 
-## Æ½Ì¨Ö§³Ö
-- [x] SMTPÓÊÏä
-- [x] ¶¤¶¤Èº»úÆ÷ÈË
-- [x] ·ÉÊéÈº»úÆ÷ÈË
-- [x] ÆóÒµÎ¢ĞÅÈº»úÆ÷ÈË
+## å¹³å°æ”¯æŒ
+- [x] SMTPé‚®ç®±
+- [x] é’‰é’‰ç¾¤æœºå™¨äºº
+- [x] é£ä¹¦ç¾¤æœºå™¨äºº
+- [x] ä¼ä¸šå¾®ä¿¡ç¾¤æœºå™¨äºº
 
+## æ–‡æ¡£èµ„æ–™
+- [x][ã€EasyNoticeã€é¡¹ç›®æ¥å…¥æ–‡æ¡£](https://chenyuefeng.blog.csdn.net/article/details/129963124)
  ---------
 
-# ÏîÄ¿½ÓÈë
-> ÏîÄ¿½ÓÈëÌá¹©ÁËÒÔÏÂ·¢ËÍ·½Ê½µÄDemo£ºÓÊ¼şÍ¨Öª¡¢¶¤¶¤Í¨Öª¡¢·ÉÊé¡¢ÆóÒµÎ¢ĞÅÍ¨Öª
+# é¡¹ç›®æ¥å…¥
+> é¡¹ç›®æ¥å…¥æä¾›äº†ä»¥ä¸‹å‘é€æ–¹å¼çš„Demoï¼šé‚®ä»¶é€šçŸ¥ã€é’‰é’‰é€šçŸ¥ã€é£ä¹¦ã€ä¼ä¸šå¾®ä¿¡é€šçŸ¥
 
-## 1. ÓÊ¼şÍ¨Öª
-> ÓÊ¼şÍ¨ÖªÖ§³ÖÍ¬Ê±·¢ËÍ¸ø¶à¸öÊÕ¼şÈË
-### Step 1 : °²×°°ü£¬Í¨¹ıNuget°²×°°ü
+## 1. é‚®ä»¶é€šçŸ¥
+> é‚®ä»¶é€šçŸ¥æ”¯æŒåŒæ—¶å‘é€ç»™å¤šä¸ªæ”¶ä»¶äºº
+### Step 1 : å®‰è£…åŒ…ï¼Œé€šè¿‡Nugetå®‰è£…åŒ…
 
 ```powershell
 Install-Package EasyNotice.Core
 Install-Package EasyNotice.Email
 ```
 
-### Step 2 : ÅäÖÃ Startup Æô¶¯Àà
+### Step 2 : é…ç½® Startup å¯åŠ¨ç±»
 
 ```csharp
 public class Startup
@@ -54,15 +56,15 @@ public class Startup
         //configuration
         services.AddEsayNotice(config =>
         {
-            config.IntervalSeconds = 10;//Í¬Ò»±êÌâµÄÏûÏ¢£¬10ÃëÄÚÖ»ÄÜ·¢Ò»Ìõ£¬±ÜÃâ¶ÌÊ±¼äÄÚ´óÁ¿·¢ËÍÖØ¸´ÏûÏ¢
+            config.IntervalSeconds = 10;//åŒä¸€æ ‡é¢˜çš„æ¶ˆæ¯ï¼Œ10ç§’å†…åªèƒ½å‘ä¸€æ¡ï¼Œé¿å…çŸ­æ—¶é—´å†…å¤§é‡å‘é€é‡å¤æ¶ˆæ¯
             config.UseEmail(option =>
             {
-                option.Host = "smtp.qq.com";//SMTPµØÖ·
-                option.Port = 465;//SMTP¶Ë¿Ú
-                option.FromName = "System";//·¢ËÍÈËÃû×Ö£¨×Ô¶¨Òå£©
-                option.FromAddress = "12345@qq.com";//·¢ËÍÓÊÏä
-                option.Password = "passaword";//ÃØÔ¿
-                option.ToAddress = new List<string>()//ÊÕ¼şÈË¼¯ºÏ
+                option.Host = "smtp.qq.com";//SMTPåœ°å€
+                option.Port = 465;//SMTPç«¯å£
+                option.FromName = "System";//å‘é€äººåå­—ï¼ˆè‡ªå®šä¹‰ï¼‰
+                option.FromAddress = "12345@qq.com";//å‘é€é‚®ç®±
+                option.Password = "passaword";//ç§˜é’¥
+                option.ToAddress = new List<string>()//æ”¶ä»¶äººé›†åˆ
                 {
                     "12345@qq.com"
                 };
@@ -72,7 +74,7 @@ public class Startup
 }
 ```
 
-### Step 3 : IEmailProvider·şÎñ½Ó¿ÚÊ¹ÓÃ
+### Step 3 : IEmailProvideræœåŠ¡æ¥å£ä½¿ç”¨
 
 ```csharp
 [ApiController]
@@ -96,17 +98,17 @@ public class NoticeController : ControllerBase
 ---------
 
 
-## 2. ¶¤¶¤Í¨Öª
-> [ÅäÖÃ¶¤¶¤Èº»úÆ÷ÈË¹Ù·½ÎÄµµ](https://developers.dingtalk.com/document/app/custom-robot-access)
+## 2. é’‰é’‰é€šçŸ¥
+> [é…ç½®é’‰é’‰ç¾¤æœºå™¨äººå®˜æ–¹æ–‡æ¡£](https://developers.dingtalk.com/document/app/custom-robot-access)
 
-### Step 1 : °²×°°ü£¬Í¨¹ıNuget°²×°°ü
+### Step 1 : å®‰è£…åŒ…ï¼Œé€šè¿‡Nugetå®‰è£…åŒ…
 
 ```powershell
 Install-Package EasyNotice.Core
 Install-Package EasyNotice.Dingtalk
 ```
 
-### Step 2 : ÅäÖÃ Startup Æô¶¯Àà
+### Step 2 : é…ç½® Startup å¯åŠ¨ç±»
 
 ```csharp
 public class Startup
@@ -118,18 +120,18 @@ public class Startup
         //configuration
         services.AddEsayNotice(config =>
         {
-            config.IntervalSeconds = 10;//Í¬Ò»±êÌâµÄÏûÏ¢£¬10ÃëÄÚÖ»ÄÜ·¢Ò»Ìõ£¬±ÜÃâ¶ÌÊ±¼äÄÚ´óÁ¿·¢ËÍÖØ¸´ÏûÏ¢
+            config.IntervalSeconds = 10;//åŒä¸€æ ‡é¢˜çš„æ¶ˆæ¯ï¼Œ10ç§’å†…åªèƒ½å‘ä¸€æ¡ï¼Œé¿å…çŸ­æ—¶é—´å†…å¤§é‡å‘é€é‡å¤æ¶ˆæ¯
             config.UseDingTalk(option =>
             {
-                option.WebHook = "https://oapi.dingtalk.com/robot/send?access_token=xxxxx";//Í¨ÖªµØÖ·
-                option.Secret = "secret";//Ç©ÃûĞ£Ñé
+                option.WebHook = "https://oapi.dingtalk.com/robot/send?access_token=xxxxx";//é€šçŸ¥åœ°å€
+                option.Secret = "secret";//ç­¾åæ ¡éªŒ
             });
         });
     }    
 }
 ```
 
-### Step 3 : IDingtalkProvider·şÎñ½Ó¿ÚÊ¹ÓÃ
+### Step 3 : IDingtalkProvideræœåŠ¡æ¥å£ä½¿ç”¨
 
 ```csharp
 [ApiController]
@@ -152,17 +154,17 @@ public class NoticeController : ControllerBase
 
 ---------
 
-## 3. ·ÉÊéÍ¨Öª
-> [ÅäÖÃ·ÉÊéÈº»úÆ÷ÈË¹Ù·½ÎÄµµ](https://open.feishu.cn/document/ukTMukTMukTM/ucTM5YjL3ETO24yNxkjN?lang=zh-CN)
+## 3. é£ä¹¦é€šçŸ¥
+> [é…ç½®é£ä¹¦ç¾¤æœºå™¨äººå®˜æ–¹æ–‡æ¡£](https://open.feishu.cn/document/ukTMukTMukTM/ucTM5YjL3ETO24yNxkjN?lang=zh-CN)
 
-### Step 1 : °²×°°ü£¬Í¨¹ıNuget°²×°°ü
+### Step 1 : å®‰è£…åŒ…ï¼Œé€šè¿‡Nugetå®‰è£…åŒ…
 
 ```powershell
 Install-Package EasyNotice.Core
 Install-Package EasyNotice.Feishu
 ```
 
-### Step 2 : ÅäÖÃ Startup Æô¶¯Àà
+### Step 2 : é…ç½® Startup å¯åŠ¨ç±»
 
 ```csharp
 public class Startup
@@ -174,18 +176,18 @@ public class Startup
         //configuration
         services.AddEsayNotice(config =>
         {
-            config.IntervalSeconds = 10;//Í¬Ò»±êÌâµÄÏûÏ¢£¬10ÃëÄÚÖ»ÄÜ·¢Ò»Ìõ£¬±ÜÃâ¶ÌÊ±¼äÄÚ´óÁ¿·¢ËÍÖØ¸´ÏûÏ¢
+            config.IntervalSeconds = 10;//åŒä¸€æ ‡é¢˜çš„æ¶ˆæ¯ï¼Œ10ç§’å†…åªèƒ½å‘ä¸€æ¡ï¼Œé¿å…çŸ­æ—¶é—´å†…å¤§é‡å‘é€é‡å¤æ¶ˆæ¯
             config.UseFeishu(option =>
             {
-                option.WebHook = "https://open.feishu.cn/open-apis/bot/v2/hook/xxxxx";//Í¨ÖªµØÖ·
-                option.Secret = "secret";//Ç©ÃûĞ£Ñé
+                option.WebHook = "https://open.feishu.cn/open-apis/bot/v2/hook/xxxxx";//é€šçŸ¥åœ°å€
+                option.Secret = "secret";//ç­¾åæ ¡éªŒ
             });
         });
     }    
 }
 ```
 
-### Step 3 : IFeishuProvider·şÎñ½Ó¿ÚÊ¹ÓÃ
+### Step 3 : IFeishuProvideræœåŠ¡æ¥å£ä½¿ç”¨
 
 ```csharp
 [ApiController]
@@ -208,17 +210,17 @@ public class NoticeController : ControllerBase
 
 ---------
 
-## 4. ÆóÒµÎ¢ĞÅÍ¨Öª
-> [ÅäÖÃÆóÒµÎ¢ĞÅÈº»úÆ÷ÈË¹Ù·½ÎÄµµ](https://developer.work.weixin.qq.com/document/path/91770)
+## 4. ä¼ä¸šå¾®ä¿¡é€šçŸ¥
+> [é…ç½®ä¼ä¸šå¾®ä¿¡ç¾¤æœºå™¨äººå®˜æ–¹æ–‡æ¡£](https://developer.work.weixin.qq.com/document/path/91770)
 
-### Step 1 : °²×°°ü£¬Í¨¹ıNuget°²×°°ü
+### Step 1 : å®‰è£…åŒ…ï¼Œé€šè¿‡Nugetå®‰è£…åŒ…
 
 ```powershell
 Install-Package EasyNotice.Core
 Install-Package EasyNotice.Weixin
 ```
 
-### Step 2 : ÅäÖÃ Startup Æô¶¯Àà
+### Step 2 : é…ç½® Startup å¯åŠ¨ç±»
 
 ```csharp
 public class Startup
@@ -230,17 +232,17 @@ public class Startup
         //configuration
         services.AddEsayNotice(config =>
         {
-            config.IntervalSeconds = 10;//Í¬Ò»±êÌâµÄÏûÏ¢£¬10ÃëÄÚÖ»ÄÜ·¢Ò»Ìõ£¬±ÜÃâ¶ÌÊ±¼äÄÚ´óÁ¿·¢ËÍÖØ¸´ÏûÏ¢
+            config.IntervalSeconds = 10;//åŒä¸€æ ‡é¢˜çš„æ¶ˆæ¯ï¼Œ10ç§’å†…åªèƒ½å‘ä¸€æ¡ï¼Œé¿å…çŸ­æ—¶é—´å†…å¤§é‡å‘é€é‡å¤æ¶ˆæ¯
             config.UseWeixin(option =>
             {
-                option.WebHook = "https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=xxxxx";//Í¨ÖªµØÖ·
+                option.WebHook = "https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=xxxxx";//é€šçŸ¥åœ°å€
             });
         });
     }    
 }
 ```
 
-### Step 3 : IWeixinProvider·şÎñ½Ó¿ÚÊ¹ÓÃ
+### Step 3 : IWeixinProvideræœåŠ¡æ¥å£ä½¿ç”¨
 
 ```csharp
 [ApiController]
@@ -262,8 +264,8 @@ public class NoticeController : ControllerBase
 ```
 
 ---------
-## ¸ü¶àÊ¾Àı
+## æ›´å¤šç¤ºä¾‹
 
-1. ²é¿´ [¸ü¶àÊ¹ÓÃÀı×Ó](https://github.com/Bryan-Cyf/EasyNotice/tree/master/sample)
-2. ²é¿´ [¸ü¶à²âÊÔÓÃÀı](https://github.com/Bryan-Cyf/EasyNotice/tree/master/test)
+1. æŸ¥çœ‹ [æ›´å¤šä½¿ç”¨ä¾‹å­](https://github.com/Bryan-Cyf/EasyNotice/tree/master/sample)
+2. æŸ¥çœ‹ [æ›´å¤šæµ‹è¯•ç”¨ä¾‹](https://github.com/Bryan-Cyf/EasyNotice/tree/master/test)
 

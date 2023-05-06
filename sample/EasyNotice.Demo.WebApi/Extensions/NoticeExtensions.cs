@@ -13,7 +13,7 @@ namespace Microsoft.Extensions.DependencyInjection
             var noticeOptions = baseConfiguration.Get<NoticeOptions>();
             configure?.Invoke(noticeOptions);
 
-            services.AddEsayNotice(config =>
+            services.AddEasyNotice(config =>
             {
                 //同一消息发送间隔 默认10秒
                 config.IntervalSeconds = noticeOptions.IntervalSeconds;

@@ -7,9 +7,9 @@ namespace EasyNotice.Feishu
 {
     internal class FeishuHelper
     {
-        public static string GetSign(string timestanp,string secret)
+        public static string GetSign(string timestamp,string secret)
         {
-            return GetHmac(timestanp, secret);
+            return GetHmac(timestamp, secret);
         }
 
         private static string GetHmac(string timestamp, string secret)

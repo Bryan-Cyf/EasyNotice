@@ -5,7 +5,7 @@ namespace Microsoft.Extensions.DependencyInjection
 {
     public static class EasyNoticeExtension
     {
-        public static IServiceCollection AddEsayNotice(this IServiceCollection services,  Action<NoticeOptions> configure)
+        public static IServiceCollection AddEasyNotice(this IServiceCollection services,  Action<NoticeOptions> configure)
         {
             var options = new NoticeOptions();
             configure?.Invoke(options);

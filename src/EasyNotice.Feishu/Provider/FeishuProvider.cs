@@ -55,7 +55,7 @@ namespace EasyNotice.Feishu
             {
                 return await IntervalHelper.IntervalExcuteAsync(async () =>
                 {
-                    message.timestamp = DateTimeHelper.GetTimestanp().ToString();
+                    message.timestamp = DateTimeHelper.GetTimestamp.ToString();
                     message.sign = FeishuHelper.GetSign(message.timestamp, _feishuOptions.Secret);
                     var response = await _httpClient.PostAsync(_feishuOptions.WebHook, new StringContent(message.ToString(), Encoding.UTF8, "application/json"));
                     var html = await response.Content.ReadAsStringAsync();

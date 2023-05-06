@@ -9,7 +9,7 @@ namespace EasyNotice.Dingtalk
     {
         public static string GetRequestUrl(string webhook, string secret)
         {
-            var timeStamp = (DateTimeOffset.Now.UtcTicks - 621355968000000000) / 10000;
+            var timeStamp = DateTimeOffset.UtcNow.ToUnixTimeMilliseconds();
             var stringToSign = $"{timeStamp}\n{secret}";
             var b64 = HMACSHA256Bytes(stringToSign, secret);
             var b64Str = Convert.ToBase64String(b64);

@@ -1,6 +1,7 @@
 ﻿using MimeKit;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace EasyNotice.Email
@@ -12,10 +13,8 @@ namespace EasyNotice.Email
             MimeMessage mimeMessage = new MimeMessage();
             var fromMailAddress = new MailboxAddress(option.FromName ?? option.FromAddress, option.FromAddress);
             mimeMessage.From.Add(fromMailAddress);
-            for (int i = 0; i < option.ToAddress.Count; i++)
+            foreach (var toMailAddress in option.ToAddress.Select(MailboxAddress.Parse))
             {
-                var item = option.ToAddress[i];
-                var toMailAddress = MailboxAddress.Parse(item);
                 mimeMessage.To.Add(toMailAddress);
             }
             BodyBuilder bodyBuilder = new BodyBuilder()
@@ -26,7 +25,7 @@ namespace EasyNotice.Email
             {
                 var attachment = bodyBuilder.Attachments.Add(input.FileName, input.Attachments);
                 //解决中文文件名乱码
-                var charset = "GB18030";
+                const string charset = "GB18030";
                 attachment.ContentType.Parameters.Clear();
                 attachment.ContentDisposition.Parameters.Clear();
                 attachment.ContentType.Parameters.Add(charset, "name", input.FileName);

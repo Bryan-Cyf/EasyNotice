@@ -53,7 +53,7 @@ public class Startup
     public void ConfigureServices(IServiceCollection services)
     {
         //configuration
-        services.AddEsayNotice(config =>
+        services.AddEasyNotice(config =>
         {
             config.IntervalSeconds = 10;//同一标题的消息，10秒内只能发一条，避免短时间内大量发送重复消息
             config.UseEmail(option =>
@@ -117,7 +117,7 @@ public class Startup
     public void ConfigureServices(IServiceCollection services)
     {
         //configuration
-        services.AddEsayNotice(config =>
+        services.AddEasyNotice(config =>
         {
             config.IntervalSeconds = 10;//同一标题的消息，10秒内只能发一条，避免短时间内大量发送重复消息
             config.UseDingTalk(option =>
@@ -173,7 +173,7 @@ public class Startup
     public void ConfigureServices(IServiceCollection services)
     {
         //configuration
-        services.AddEsayNotice(config =>
+        services.AddEasyNotice(config =>
         {
             config.IntervalSeconds = 10;//同一标题的消息，10秒内只能发一条，避免短时间内大量发送重复消息
             config.UseFeishu(option =>
@@ -229,7 +229,7 @@ public class Startup
     public void ConfigureServices(IServiceCollection services)
     {
         //configuration
-        services.AddEsayNotice(config =>
+        services.AddEasyNotice(config =>
         {
             config.IntervalSeconds = 10;//同一标题的消息，10秒内只能发一条，避免短时间内大量发送重复消息
             config.UseWeixin(option =>

@@ -42,8 +42,17 @@ namespace EasyNotice.Weixin
         /// </summary>
         public Task<EasyNoticeSendResponse> SendAsync(string title, string message)
         {
-            return SendBaseAsync(title, new TextMessage(title));
+            return SendBaseAsync(title, new TextMessage(message));
         }
+
+        /// <summary>
+        /// 发送Markdown类型消息
+        /// </summary>
+        public Task<EasyNoticeSendResponse> SendMarkdownMessageAsync(string title, string message)
+        {
+            return SendBaseAsync(title, new MarkdownMessage(message));
+        }
+
 
         /// <summary>
         /// 发送消息公共方法
@@ -66,5 +75,7 @@ namespace EasyNotice.Weixin
             }
             return response;
         }
+  
+
     }
 }

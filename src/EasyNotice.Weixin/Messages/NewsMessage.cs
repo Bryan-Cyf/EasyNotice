@@ -18,22 +18,20 @@ namespace EasyNotice.Weixin
         }
 
         public News news { get; set; }
+    }
 
-        public class News
-        {
+    public class News
+    {
+        public List<NewsContent> articles { get; set; }
+    }
 
-            public List<NewsContent> articles { get; set; }
-        }
+    public class NewsContent
+    {
+        public string title { get; set; }
+        public string description { get; set; }
 
-        public class NewsContent
-        {
-            public string title { get; set; }
-            public string description { get; set; }
+        public string url { get; set; }
 
-            public string url { get; set; }
-
-            public string picurl { get; set; }
-        }
-
+        public string picurl { get; set; }
     }
 }

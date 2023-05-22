@@ -3,7 +3,6 @@ using EasyNotice.Weixin;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using static EasyNotice.Weixin.NewsMessage;
 
 namespace EasyNotice
 {
@@ -16,6 +15,7 @@ namespace EasyNotice
         /// <param name="message">消息</param>
         /// <returns></returns>
         Task<EasyNoticeSendResponse> SendMarkdownMessageAsync(string title, string message);
+
         /// <summary>
         /// 发送图片
         /// </summary>
@@ -24,6 +24,7 @@ namespace EasyNotice
         /// <param name="md5">文件的MD5</param>
         /// <returns></returns>
         Task<EasyNoticeSendResponse> SendImageMessageAsync(string title, string base64, string md5);
+
         /// <summary>
         /// 发送图文消息
         /// </summary>
@@ -34,12 +35,10 @@ namespace EasyNotice
         /// <param name="picurl">图片链接</param>
         /// <returns></returns>
         Task<EasyNoticeSendResponse> SendNewsMessageAsync(string title, string newstitle, string description, string url, string picurl);
+
         /// <summary>
         /// 发送图文消息
         /// </summary>
-        /// <param name="title">标题</param>
-        /// <param name="news">图文列表</param>
-        /// <returns></returns>
         Task<EasyNoticeSendResponse> SendNewsMessageAsync(string title, List<NewsContent> news);
     }
 }

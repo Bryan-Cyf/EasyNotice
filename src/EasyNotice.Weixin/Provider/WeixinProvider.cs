@@ -6,7 +6,6 @@ using System.Collections.Generic;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
-using static EasyNotice.Weixin.NewsMessage;
 
 namespace EasyNotice.Weixin
 {
@@ -58,28 +57,17 @@ namespace EasyNotice.Weixin
         /// <summary>
         /// 发送图片类型消息
         /// </summary>
-        /// <param name="title"></param>
-        /// <param name="base64"></param>
-        /// <param name="md5"></param>
-        /// <returns></returns>
         public Task<EasyNoticeSendResponse> SendImageMessageAsync(string title, string base64, string md5)
         {
             return SendBaseAsync(title, new ImageMessage(base64, md5));
         }
 
-
         /// <summary>
         /// 发送图文类型的消息
         /// </summary>
-        /// <param name="title"></param>
-        /// <param name="newstitle"></param>
-        /// <param name="description"></param>
-        /// <param name="url"></param>
-        /// <param name="picurl"></param>
-        /// <returns></returns>
         public Task<EasyNoticeSendResponse> SendNewsMessageAsync(string title, string newstitle, string description, string url, string picurl)
         {
-            
+
             List<NewsContent> news = new List<NewsContent>() {
                 new NewsContent() {
                     title = newstitle,
@@ -95,14 +83,10 @@ namespace EasyNotice.Weixin
         /// <summary>
         /// 发送图文类型的消息
         /// </summary>
-        /// <param name="title"></param>
-        /// <param name="base64"></param>
-        /// <param name="md5"></param>
-        /// <returns></returns>
         public async Task<EasyNoticeSendResponse> SendNewsMessageAsync(string title, List<NewsContent> news)
         {
             var response = new EasyNoticeSendResponse();
-            if (news!=null&& news.Count>1&& news.Count<=8)
+            if (news != null && news.Count > 1 && news.Count <= 8)
             {
                 return await SendBaseAsync(title, new NewsMessage(news));
             }
@@ -114,7 +98,6 @@ namespace EasyNotice.Weixin
             return response;
 
         }
-
 
         /// <summary>
         /// 发送消息公共方法
@@ -137,7 +120,5 @@ namespace EasyNotice.Weixin
             }
             return response;
         }
-
-
     }
 }

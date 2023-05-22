@@ -29,8 +29,8 @@ namespace EasyNotice
         /// 发送图文消息
         /// </summary>
         /// <param name="title">主题</param>
-        /// <param name="newstitle">新闻标题</param>
-        /// <param name="description">新闻详情</param>
+        /// <param name="newstitle">标题</param>
+        /// <param name="description">详情</param>
         /// <param name="url">链接</param>
         /// <param name="picurl">图片链接</param>
         /// <returns></returns>
@@ -39,6 +39,9 @@ namespace EasyNotice
         /// <summary>
         /// 发送图文消息
         /// </summary>
+        /// <param name="title">主题</param>
+        /// <param name="news">图文集合</param>
+        /// <returns></returns>
         Task<EasyNoticeSendResponse> SendNewsMessageAsync(string title, List<NewsContent> news);
     }
 }

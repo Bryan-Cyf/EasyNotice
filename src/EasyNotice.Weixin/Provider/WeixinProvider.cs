@@ -24,7 +24,7 @@ namespace EasyNotice.Weixin
         private readonly WeixinOptions _WeixinOptions;
         private readonly NoticeOptions _noticeOptions;
 
-        public WeixinProvider(IOptionsSnapshot<WeixinOptions> WeixinOptions, IOptionsSnapshot<NoticeOptions> noticeOptions)
+        public WeixinProvider(IOptions<WeixinOptions> WeixinOptions, IOptions<NoticeOptions> noticeOptions)
         {
             _WeixinOptions = WeixinOptions.Value;
             _noticeOptions = noticeOptions.Value;

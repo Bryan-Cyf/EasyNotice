@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>YourPackage</id>
+    <version>1.1.3</version>
+    <authors>chenyf</authors>
+    <owners>chenyf</owners>
+    <description>私域中台架构—淘宝客调用组件</description>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <packageTypes>
+      <packageType name="Dependency" />
+    </packageTypes>
+    <contentFiles>
+      <files include="**/*" buildAction="Content" copyToOutput="true" />
+    </contentFiles>
+    <tags>私域</tags>
+    <iconUrl>https://login-mbridge.wechatgj.cn/html/MagpieBridge/imgs/favicon.ico</iconUrl>
+  </metadata>
+   <files>
+    <file src="bin\Release\netstandard2.1\YourPackage.dll" target="lib\netstandard2.1\YourPackage.dll" />
+  </files>
+</package>

@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace EasyNotice.Weixin
+﻿namespace EasyNotice.Weixin
 {
     /// <summary>
     /// 图片类型消息

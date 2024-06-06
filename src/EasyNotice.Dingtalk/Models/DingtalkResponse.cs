@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using System;
+using Newtonsoft.Json;
 
 namespace EasyNotice.Dingtalk
 {
@@ -28,7 +29,7 @@ namespace EasyNotice.Dingtalk
             {
                 if (!string.IsNullOrEmpty(ErrMsg) && ErrMsg.Contains("description:"))
                 {
-                    return ErrMsg.Split("description:")[1].Split(";")[0];
+                    return ErrMsg.Split(new []{ "description:" }, StringSplitOptions.None)[1].Split(new[] { ';' })[0];
                 }
                 return string.Empty;
             }
@@ -40,7 +41,7 @@ namespace EasyNotice.Dingtalk
             {
                 if (!string.IsNullOrEmpty(ErrMsg) && ErrMsg.Contains("solution:"))
                 {
-                    return ErrMsg.Split("solution:")[1];
+                    return ErrMsg.Split(new []{ "solution:" }, StringSplitOptions.None)[1];
                 }
                 return string.Empty;
             }

@@ -54,10 +54,9 @@ namespace EasyNotice.Email
         /// </summary>
         private async Task<EasyNoticeSendResponse> SendBaseAsync(EmailSendRequest input)
         {
-            var response = new EasyNoticeSendResponse();
             try
             {
-                await IntervalHelper.IntervalExcuteAsync(async () =>
+                return await IntervalHelper.IntervalExcuteAsync(async () =>
                 {
                     var message = EmailHelper.CreateMimeMessage(input, _emailOptions);
                     using (SmtpClient client = new SmtpClient())
@@ -69,14 +68,14 @@ namespace EasyNotice.Email
                         await client.AuthenticateAsync(_emailOptions.FromAddress, _emailOptions.Password);
                         await client.SendAsync(message);
                     }
+                    return new EasyNoticeSendResponse() { ErrCode = 0, ErrMsg = "" };
                 }, input.Subject, _noticeOptions.IntervalSeconds);
 
             }
             catch (Exception ex)
             {
-                response.ErrMsg = $"邮件发送异常:{ex.Message}";
+                return new EasyNoticeSendResponse() { ErrCode = 9999, ErrMsg = $"邮件发送异常:{ex.Message}" };
             }
-            return response;
         }
     }
 }

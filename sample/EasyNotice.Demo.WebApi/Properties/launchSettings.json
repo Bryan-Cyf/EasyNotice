@@ -9,7 +9,7 @@
     }
   },
   "profiles": {
-    "Helper.WebApi.Test": {
+    "EasyNotice.Demo.WebApi": {
       "commandName": "Project",
       "launchBrowser": true,
       "launchUrl": "swagger",

@@ -18,7 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Bryan.Tools.Swagger" Version="1.0.2" />
+    <PackageReference Include="Bryan.Tools.Swagger" Version="1.0.3" />
   </ItemGroup>
 
 </Project>

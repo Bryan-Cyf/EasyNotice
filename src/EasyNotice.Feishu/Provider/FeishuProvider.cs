@@ -32,18 +32,18 @@ namespace EasyNotice.Feishu
         /// <summary>
         /// 发送异常消息
         /// </summary>
-        public Task<EasyNoticeSendResponse> SendAsync(string title, Exception exception)
+        public Task<EasyNoticeSendResponse> SendAsync(string title, Exception exception, EasyNoticeAtUser atUser = null)
         {
             var text = $"{title}{Environment.NewLine}{exception.Message}{Environment.NewLine}{exception}";
-            return SendBaseAsync(title, new TextMessage(text));
+            return SendBaseAsync(title, new TextMessage(text, atUser));
         }
 
         /// <summary>
         /// 发送普通消息
         /// </summary>
-        public Task<EasyNoticeSendResponse> SendAsync(string title, string message)
+        public Task<EasyNoticeSendResponse> SendAsync(string title, string message, EasyNoticeAtUser atUser = null)
         {
-            return SendBaseAsync(title, new TextMessage(title));
+            return SendBaseAsync(title, new TextMessage(title, atUser));
         }
 
         /// <summary>

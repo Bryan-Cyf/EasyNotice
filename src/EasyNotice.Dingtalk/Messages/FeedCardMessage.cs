@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace EasyNotice.Dingtalk
+﻿namespace EasyNotice.Dingtalk
 {
     public class FeedCardMessage : MessageBase
     {

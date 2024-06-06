@@ -3,7 +3,7 @@
 	<Import Project="..\..\build\notice.props" />
 
 	<PropertyGroup>
-		<TargetFramework>netstandard2.1</TargetFramework>
+		<TargetFrameworks>netstandard2.0;netstandard2.1</TargetFrameworks>
 		<RootNamespace>EasyNotice.Weixin</RootNamespace>
 		<Description>[消息通知]飞书通知组件</Description>
 		<PackageTags>Weixin,notice</PackageTags>

@@ -31,18 +31,18 @@ namespace EasyNotice.Dingtalk
         /// <summary>
         /// 发送异常消息
         /// </summary>
-        public Task<EasyNoticeSendResponse> SendAsync(string title, Exception exception)
+        public Task<EasyNoticeSendResponse> SendAsync(string title, Exception exception, EasyNoticeAtUser atUser = null)
         {
             var text = $"# {title}{Environment.NewLine}{exception.Message}{Environment.NewLine}{exception}";
-            return SendMarkdownAsync(title, text);
+            return SendMarkdownAsync(title, text, atUser);
         }
 
         /// <summary>
         /// 发送普通消息
         /// </summary>
-        public Task<EasyNoticeSendResponse> SendAsync(string title, string message)
+        public Task<EasyNoticeSendResponse> SendAsync(string title, string message, EasyNoticeAtUser atUser = null)
         {
-            return SendMarkdownAsync(title, message);
+            return SendMarkdownAsync(title, message, atUser);
         }
 
         #region 文本消息
@@ -50,9 +50,9 @@ namespace EasyNotice.Dingtalk
         /// <summary>
         /// 发送文本消息
         /// </summary>
-        public Task<EasyNoticeSendResponse> SendTextAsync(string text)
+        public Task<EasyNoticeSendResponse> SendTextAsync(string text, EasyNoticeAtUser atUser = null)
         {
-            return SendTextAsync(new TextMessage(text));
+            return SendTextAsync(new TextMessage(text, atUser));
         }
 
         /// <summary>
@@ -70,9 +70,9 @@ namespace EasyNotice.Dingtalk
         /// <summary>
         /// 发送MarkDown消息
         /// </summary>
-        public Task<EasyNoticeSendResponse> SendMarkdownAsync(string title, string text)
+        public Task<EasyNoticeSendResponse> SendMarkdownAsync(string title, string text, EasyNoticeAtUser atUser = null)
         {
-            return SendMarkdownAsync(new MarkdownMessage(title, text));
+            return SendMarkdownAsync(new MarkdownMessage(title, text, atUser));
         }
 
         /// <summary>

@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using EasyNotice.Core;
+using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -25,7 +26,7 @@ namespace EasyNotice.UnitTests
                     option.Password = "passaword";
                     option.ToAddress = new List<string>()
                     {
-                        "12345@qq.com"
+                        "123@qq.com"
                     };
                 });
             });
@@ -38,6 +39,13 @@ namespace EasyNotice.UnitTests
         public async Task Email_Send_Should_Be_Succeed()
         {
             var response = await _emailProvider.SendAsync("邮件标题", new Exception("custom exception"));
+            Assert.True(response.IsSuccess);
+        }
+
+        [Fact]
+        public async Task Email_Send_AtUser_Should_Be_Succeed()
+        {
+            var response = await _emailProvider.SendAsync("通知标题", new Exception("custom exception"), new EasyNoticeAtUser() { IsAtAll = false, UserId = new[] { "123@qq.com" } });
             Assert.True(response.IsSuccess);
         }
     }

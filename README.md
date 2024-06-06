@@ -2,13 +2,14 @@
 
 ## Nuget包
 
-| Package Name |  Version | Downloads
-|--------------|  ------- | ----
-| EasyNotice.Core | [![NuGet](https://img.shields.io/nuget/v/EasyNotice.Core)](https://www.nuget.org/packages/EasyNotice.Core) | [![NuGet](https://img.shields.io/nuget/dt/EasyNotice.Core)](https://www.nuget.org/packages/EasyNotice.Core)|
-| EasyNotice.Dingtalk | [![NuGet](https://img.shields.io/nuget/v/EasyNotice.Dingtalk)](https://www.nuget.org/packages/EasyNotice.Dingtalk) | [![NuGet](https://img.shields.io/nuget/dt/EasyNotice.Dingtalk)](https://www.nuget.org/packages/EasyNotice.Dingtalk)|
-| EasyNotice.Email | [![NuGet](https://img.shields.io/nuget/v/EasyNotice.Email)](https://www.nuget.org/packages/EasyNotice.Email) | [![NuGet](https://img.shields.io/nuget/dt/EasyNotice.Email)](https://www.nuget.org/packages/EasyNotice.Email)|
-| EasyNotice.Feishu | [![NuGet](https://img.shields.io/nuget/v/EasyNotice.Feishu)](https://www.nuget.org/packages/EasyNotice.Feishu) | [![NuGet](https://img.shields.io/nuget/dt/EasyNotice.Feishu)](https://www.nuget.org/packages/EasyNotice.Feishu)|
-| EasyNotice.Weixin | [![NuGet](https://img.shields.io/nuget/v/EasyNotice.Weixin)](https://www.nuget.org/packages/EasyNotice.Weixin) | [![NuGet](https://img.shields.io/nuget/dt/EasyNotice.Weixin)](https://www.nuget.org/packages/EasyNotice.Weixin)|
+| Package Name |  Version | Downloads |
+|--------------|  ------- | ---- |
+| EasyNotice.Core | [![NuGet](https://img.shields.io/nuget/v/EasyNotice.Core)](https://www.nuget.org/packages/EasyNotice.Core) | [![NuGet](https://img.shields.io/nuget/dt/EasyNotice.Core)](https://www.nuget.org/packages/EasyNotice.Core) |
+| EasyNotice.Dingtalk | [![NuGet](https://img.shields.io/nuget/v/EasyNotice.Dingtalk)](https://www.nuget.org/packages/EasyNotice.Dingtalk) | [![NuGet](https://img.shields.io/nuget/dt/EasyNotice.Dingtalk)](https://www.nuget.org/packages/EasyNotice.Dingtalk) |
+| EasyNotice.Email | [![NuGet](https://img.shields.io/nuget/v/EasyNotice.Email)](https://www.nuget.org/packages/EasyNotice.Email) | [![NuGet](https://img.shields.io/nuget/dt/EasyNotice.Email)](https://www.nuget.org/packages/EasyNotice.Email) |
+| EasyNotice.Feishu | [![NuGet](https://img.shields.io/nuget/v/EasyNotice.Feishu)](https://www.nuget.org/packages/EasyNotice.Feishu) | [![NuGet](https://img.shields.io/nuget/dt/EasyNotice.Feishu)](https://www.nuget.org/packages/EasyNotice.Feishu) |
+| EasyNotice.Weixin | [![NuGet](https://img.shields.io/nuget/v/EasyNotice.Weixin)](https://www.nuget.org/packages/EasyNotice.Weixin) | [![NuGet](https://img.shields.io/nuget/dt/EasyNotice.Weixin)](https://www.nuget.org/packages/EasyNotice.Weixin) |
+
 ---------
 
 # `EasyNotice`

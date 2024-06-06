@@ -104,21 +104,27 @@ namespace EasyNotice.Weixin
         /// </summary>
         private async Task<EasyNoticeSendResponse> SendBaseAsync(string title, MessageBase message)
         {
-            var response = new EasyNoticeSendResponse();
             try
             {
                 return await IntervalHelper.IntervalExcuteAsync(async () =>
                 {
                     var response = await _httpClient.PostAsync(_WeixinOptions.WebHook, new StringContent(message.ToString(), Encoding.UTF8, "application/json"));
                     var html = await response.Content.ReadAsStringAsync();
-                    return JsonConvert.DeserializeObject<EasyNoticeSendResponse>(html);
+                    var weixinResponse = JsonConvert.DeserializeObject<WeixinResponse>(html);
+                    if (weixinResponse.IsSuccess)
+                    {
+                        return new EasyNoticeSendResponse() { ErrCode = 0, ErrMsg = "" };
+                    }
+                    else
+                    {
+                        return new EasyNoticeSendResponse() { ErrCode = weixinResponse.ErrCode, ErrMsg = weixinResponse.ErrMsg };
+                    }
                 }, title, _noticeOptions.IntervalSeconds);
             }
             catch (Exception ex)
             {
-                response.ErrMsg = $"企业微信发送异常:{ex.Message}";
+                return new EasyNoticeSendResponse() {ErrCode = 9999, ErrMsg = $"企业微信发送消息异常:{ex.Message}" };
             }
-            return response;
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using EasyNotice.Core;
+using EasyNotice.Dingtalk;
 using Microsoft.Extensions.Options;
 using Newtonsoft.Json;
 using System;
@@ -50,7 +51,6 @@ namespace EasyNotice.Feishu
         /// </summary>
         private async Task<EasyNoticeSendResponse> SendBaseAsync(string title, MessageBase message)
         {
-            var response = new EasyNoticeSendResponse();
             try
             {
                 return await IntervalHelper.IntervalExcuteAsync(async () =>
@@ -59,14 +59,21 @@ namespace EasyNotice.Feishu
                     message.sign = FeishuHelper.GetSign(message.timestamp, _feishuOptions.Secret);
                     var response = await _httpClient.PostAsync(_feishuOptions.WebHook, new StringContent(message.ToString(), Encoding.UTF8, "application/json"));
                     var html = await response.Content.ReadAsStringAsync();
-                    return JsonConvert.DeserializeObject<EasyNoticeSendResponse>(html);
+                    var feishuResponse = JsonConvert.DeserializeObject<FeishuResponse>(html);
+                    if (feishuResponse.IsSuccess)
+                    {
+                        return new EasyNoticeSendResponse() { ErrCode = 0, ErrMsg = "" };
+                    }
+                    else
+                    {
+                        return new EasyNoticeSendResponse() { ErrCode = feishuResponse.Code, ErrMsg = feishuResponse.Msg };
+                    }
                 }, title, _noticeOptions.IntervalSeconds);
             }
             catch (Exception ex)
             {
-                response.ErrMsg = $"飞书发送异常:{ex.Message}";
+                return new EasyNoticeSendResponse() { ErrCode = 9999, ErrMsg = $"飞书发送消息异常:{ex.Message}" };
             }
-            return response;
         }
     }
 }

@@ -110,7 +110,6 @@ namespace EasyNotice.Dingtalk
         /// </summary>
         private async Task<EasyNoticeSendResponse> SendBaseAsync(MessageBase message)
         {
-            var response = new EasyNoticeSendResponse();
             try
             {
                 return await IntervalHelper.IntervalExcuteAsync(async () =>
@@ -118,14 +117,21 @@ namespace EasyNotice.Dingtalk
                     var requestUrl = DingTalkHelper.GetRequestUrl(_dingTalkOptions.WebHook, _dingTalkOptions.Secret);
                     var response = await _httpClient.PostAsync(requestUrl, new StringContent(message.ToString(), Encoding.UTF8, "application/json"));
                     var html = await response.Content.ReadAsStringAsync();
-                    return JsonConvert.DeserializeObject<EasyNoticeSendResponse>(html);
+                    var dingtalkResponse = JsonConvert.DeserializeObject<DingtalkResponse>(html);
+                    if (dingtalkResponse.IsSuccess)
+                    {
+                        return new EasyNoticeSendResponse() { ErrCode = 0, ErrMsg = "" };
+                    }
+                    else
+                    {
+                        return new EasyNoticeSendResponse() { ErrCode = dingtalkResponse.ErrCode, ErrMsg = !string.IsNullOrEmpty(dingtalkResponse.Description) ? $"{dingtalkResponse.Description}，{dingtalkResponse.Solution}" : dingtalkResponse.ErrMsg };
+                    }
                 }, message.title, _noticeOptions.IntervalSeconds);
             }
             catch (Exception ex)
             {
-                response.ErrMsg = $"钉钉发送异常:{ex.Message}";
+                return new EasyNoticeSendResponse() { ErrCode = 9999, ErrMsg = $"钉钉发送消息异常:{ex.Message}" };
             }
-            return response;
         }
     }
 }

@@ -4,12 +4,36 @@
 		<VersionSuffix>0</VersionSuffix>
 		<Version>$(VersionPrefix).$(VersionSuffix)</Version>
 		<AssemblyVersion>$(VersionPrefix).0</AssemblyVersion>
+		<AssemblyOriginatorKeyFile>$(MSBuildThisFileDirectory)StrongName.snk</AssemblyOriginatorKeyFile>
+		<SignAssembly>true</SignAssembly>
 		<NoWarn>$(NoWarn);CS1591</NoWarn>
 		<Authors>Bryan</Authors>
 		<Company>Bryan</Company>
 		<PackageIcon>nuget-icon.png</PackageIcon>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
 		<Product>EasyNotice</Product>
 		<PackageProjectUrl>https://github.com/Bryan-Cyf/EasyNotice</PackageProjectUrl>
+		<RepositoryUrl>https://github.com/Bryan-Cyf/EasyNotice.git</RepositoryUrl>
+		<RepositoryType>git</RepositoryType>
+		<IncludeSymbols>true</IncludeSymbols>
+		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
+		<PublishRepositoryUrl>true</PublishRepositoryUrl>
+		<EmbedUntrackedSources>true</EmbedUntrackedSources>
+		<AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
 		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
 	</PropertyGroup>
+
+	<PropertyGroup Label="SourceLink">
+		<SourceLinkServerType>GitHub</SourceLinkServerType>
+		<SourceLinkOriginUrl>$(RepositoryUrl)</SourceLinkOriginUrl>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Microsoft.SourceLink.GitHub" Version="8.0.0" PrivateAssets="All"/>
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Include="$(MSBuildThisFileDirectory)../media/nuget-icon.png" Pack="true" Visible="false" PackagePath="\" />
+		<None Include="$(MSBuildThisFileDirectory)../README.md" Pack="true" Visible="false" PackagePath="\"/>
+	</ItemGroup>
 </Project>

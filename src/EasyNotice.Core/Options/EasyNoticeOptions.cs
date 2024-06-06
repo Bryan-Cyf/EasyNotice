@@ -9,7 +9,7 @@ namespace Microsoft.Extensions.DependencyInjection
     public class EasyNoticeOptions
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="T:EasyCaching.Core.EasyCachingOptions"/> class.
+        /// Initializes a new instance of the <see cref="T:EasyNotice.Core.EasyNoticeOptions"/> class.
         /// </summary>
         public EasyNoticeOptions()
         {

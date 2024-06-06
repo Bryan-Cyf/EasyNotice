@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Security.Cryptography;
 using System.Text;
-using System.Web;
 
 namespace EasyNotice.Weixin
 {
@@ -15,8 +14,10 @@ namespace EasyNotice.Weixin
         private static string GetHmac(string timestamp, string secret)
         {
             var stringToSign = $"{timestamp}\n{secret}";
-            using var hmacsha256 = new HMACSHA256Final(Encoding.UTF8.GetBytes(stringToSign));
-            return Convert.ToBase64String(hmacsha256.GetHashFinal());
+            using (var hmacsha256 = new HMACSHA256Final(Encoding.UTF8.GetBytes(stringToSign)))
+            {
+                return Convert.ToBase64String(hmacsha256.GetHashFinal());
+            }
         }
     }
 

@@ -1,8 +1,7 @@
-﻿using EasyNotice.Email;
-using Microsoft.Extensions.DependencyInjection;
+﻿using Microsoft.Extensions.DependencyInjection;
 using System;
-using System.Collections.Generic;
 using System.Threading.Tasks;
+using EasyNotice.Core;
 using Xunit;
 
 namespace EasyNotice.UnitTests
@@ -35,6 +34,13 @@ namespace EasyNotice.UnitTests
         public async Task Weixin_Send_Should_Be_Succeed()
         {
             var response = await _weixinProvider.SendAsync("通知标题", new Exception("custom exception"));
+            Assert.True(response.IsSuccess);
+        }
+
+        [Fact]
+        public async Task Weixin_Send_AtUser_Should_Be_Succeed()
+        {
+            var response = await _weixinProvider.SendAsync("通知标题", new Exception("custom exception"), new EasyNoticeAtUser(){IsAtAll = false, Mobile = new []{"138xxxxxxxx"}});
             Assert.True(response.IsSuccess);
         }
     }

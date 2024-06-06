@@ -1,6 +1,5 @@
 ﻿using EasyNotice.Core;
 using EasyNotice.Weixin;
-using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 

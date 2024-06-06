@@ -2,10 +2,8 @@
 using MailKit.Net.Smtp;
 using MailKit.Security;
 using Microsoft.Extensions.Options;
-using MimeKit;
 using System;
-using System.Collections.Generic;
-using System.Text;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace EasyNotice.Email
@@ -24,7 +22,7 @@ namespace EasyNotice.Email
         /// <summary>
         /// 发送异常消息
         /// </summary>
-        public Task<EasyNoticeSendResponse> SendAsync(string title, Exception exception)
+        public Task<EasyNoticeSendResponse> SendAsync(string title, Exception exception, EasyNoticeAtUser atUser = null)
         {
             var request = new EmailSendRequest
             {
@@ -32,13 +30,13 @@ namespace EasyNotice.Email
                 Body = $"{exception.Message}{Environment.NewLine}{exception}"
             };
 
-            return SendBaseAsync(request);
+            return SendBaseAsync(request, atUser);
         }
 
         /// <summary>
         /// 发送普通消息
         /// </summary>
-        public Task<EasyNoticeSendResponse> SendAsync(string title, string message)
+        public Task<EasyNoticeSendResponse> SendAsync(string title, string message, EasyNoticeAtUser atUser = null)
         {
             var request = new EmailSendRequest
             {
@@ -46,19 +44,20 @@ namespace EasyNotice.Email
                 Body = message
             };
 
-            return  SendBaseAsync(request);
+            return  SendBaseAsync(request, atUser);
         }
 
         /// <summary>
         /// 发送消息公共方法
         /// </summary>
-        private async Task<EasyNoticeSendResponse> SendBaseAsync(EmailSendRequest input)
+        private async Task<EasyNoticeSendResponse> SendBaseAsync(EmailSendRequest input, EasyNoticeAtUser atUser = null)
         {
             try
             {
                 return await IntervalHelper.IntervalExcuteAsync(async () =>
                 {
-                    var message = EmailHelper.CreateMimeMessage(input, _emailOptions);
+                    var emailOptions = new EmailOptions() { FromName = _emailOptions.FromName, FromAddress = _emailOptions.FromAddress, ToAddress = atUser == null ? _emailOptions.ToAddress : atUser.UserId.ToList() };
+                    var message = EmailHelper.CreateMimeMessage(input, emailOptions);
                     using (SmtpClient client = new SmtpClient())
                     {
                         client.CheckCertificateRevocation = false;

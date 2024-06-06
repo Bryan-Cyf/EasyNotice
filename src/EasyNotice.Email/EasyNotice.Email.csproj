@@ -3,7 +3,7 @@
 	<Import Project="..\..\build\notice.props" />
 
 	<PropertyGroup>
-		<TargetFramework>netstandard2.1</TargetFramework>
+		<TargetFrameworks>netstandard2.0;netstandard2.1</TargetFrameworks>
 		<RootNamespace>EasyNotice.Email</RootNamespace>
 		<Description>[消息通知]邮件通知组件</Description>
 		<PackageTags>email,notice</PackageTags>

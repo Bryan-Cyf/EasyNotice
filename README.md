@@ -1,4 +1,24 @@
-# EasyNotice
+<p align="center">
+    <a href="https://github.com/Bryan-Cyf/EasyNotice" target="_blank" rel="noopener noreferrer">
+        <img width="100" src="https://github.com/Bryan-Cyf/EasyNotice/blob/master/media/nuget-icon.png" alt="EasyNotice logo" />
+    </a>
+</p>
+
+<p align="center"><b>EasyNotice</b> 基于.NET 强大易用的消息通知组件 </p>
+
+<p align="center">
+<a href="https://www.nuget.org/packages/EasyNotice.Core"><img alt="nuget release" src="https://img.shields.io/nuget/v/EasyNotice.Core" /></a>
+<a href="https://www.nuget.org/packages/EasyNotice.Core"><img alt="nuget release" src="https://img.shields.io/nuget/dt/EasyNotice.Core" /></a>
+<br />
+<a href="https://chenyuefeng.blog.csdn.net/article/details/129963124">文档</a>
+</p>
+
+-----------
+
+# `EasyNotice`
+> 这是一个基于.NET开源的消息通知组件，它包含了邮件通知、钉钉、飞书、企业微信通知，可以帮助我们更容易地发送程序异常通知！
+
+-----------
 
 ## Nuget包
 
@@ -10,15 +30,12 @@
 | EasyNotice.Feishu | [![NuGet](https://img.shields.io/nuget/v/EasyNotice.Feishu)](https://www.nuget.org/packages/EasyNotice.Feishu) | [![NuGet](https://img.shields.io/nuget/dt/EasyNotice.Feishu)](https://www.nuget.org/packages/EasyNotice.Feishu) |
 | EasyNotice.Weixin | [![NuGet](https://img.shields.io/nuget/v/EasyNotice.Weixin)](https://www.nuget.org/packages/EasyNotice.Weixin) | [![NuGet](https://img.shields.io/nuget/dt/EasyNotice.Weixin)](https://www.nuget.org/packages/EasyNotice.Weixin) |
 
----------
 
-# `EasyNotice`
-> 这是一个基于.NET开源的消息通知组件，它包含了邮件通知、钉钉、飞书、企业微信通知，可以帮助我们更容易地发送程序异常通知！
-
--------
+-----------
 
 ## 功能介绍
  - 支持[邮件]、[钉钉]、[飞书]、[企业微信]方式发送
+ - 支持@人
  - 支持自定义发送间隔，避免同样的异常频繁通知
  - 傻瓜式配置，开箱即用
 

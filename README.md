@@ -4,7 +4,7 @@
     </a>
 </p>
 
-<p align="center"><b>EasyNotice</b> 基于.NET 强大易用的消息通知组件 </p>
+<p align="center"><b>EasyNotice</b>强大易用的消息通知组件 </p>
 
 <p align="center">
 <a href="https://www.nuget.org/packages/EasyNotice.Core"><img alt="nuget release" src="https://img.shields.io/nuget/v/EasyNotice.Core" /></a>
@@ -35,7 +35,7 @@
 
 ## 功能介绍
  - 支持[邮件]、[钉钉]、[飞书]、[企业微信]方式发送
- - 支持@人
+ - 支持@指定人员
  - 支持自定义发送间隔，避免同样的异常频繁通知
  - 傻瓜式配置，开箱即用
 
